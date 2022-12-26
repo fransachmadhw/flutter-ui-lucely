@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucely_app/pages/authentication/register_page.dart';
+import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:sizer/sizer.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -90,7 +91,7 @@ class LoginPage extends StatelessWidget {
                   ),
                   const Gap(spacing * 4),
                   PrimaryButton(
-                    onPressed: () {},
+                    onPressed: () => Get.off(() => const MainApp()),
                     title: "Login",
                     type: ButtonType.primary,
                     isLoading: false,
@@ -105,7 +106,7 @@ class LoginPage extends StatelessWidget {
                       ),
                       const Gap(spacing / 2),
                       InkWell(
-                        onTap: () => Get.to(() => RegisterPage()),
+                        onTap: () => Get.to(() => const RegisterPage()),
                         child: Text(
                           "Buat Akun",
                           style: Theme.of(context)

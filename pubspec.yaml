@@ -17,6 +17,7 @@ dependencies:
   gap: ^2.0.1
   get: ^4.6.5
   sizer: ^2.0.15
+  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/images/icons/
 
   fonts:
     - family: DMSans
