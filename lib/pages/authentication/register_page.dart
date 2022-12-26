@@ -1,21 +1,23 @@
-import 'package:flutter/material.dart';
-import 'package:lucely_app/pages/authentication/register_page.dart';
-import 'package:sizer/sizer.dart';
-import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 import 'package:lucely_app/common/color_palettes.dart';
-import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/controller/pages/authentication/login_page_controller.dart';
+import 'package:lucely_app/pages/authentication/login_page.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 import 'package:lucely_app/widgets/input/primary_input.dart';
+import 'package:sizer/sizer.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:get/get.dart';
+import 'package:lucely_app/common/sizing.dart';
+import 'package:lucely_app/controller/pages/authentication/register_page_controller.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  RegisterPage({super.key});
+
+  final pageController = Get.put(RegisterPageController());
 
   @override
   Widget build(BuildContext context) {
-    return GetX<LoginPageController>(
-      init: LoginPageController(),
+    return GetX<RegisterPageController>(
+      init: RegisterPageController(),
       builder: (controller) => Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
@@ -24,7 +26,7 @@ class LoginPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Gap(15.w), // 10% of screen height
+                  Gap(5.w), // 10% of screen height
                   Wrap(
                     direction: Axis.vertical,
                     spacing: spacing * 2,
@@ -33,7 +35,7 @@ class LoginPage extends StatelessWidget {
                         height: spacing * 10, // 80
                         child: Image.asset('assets/images/lucely-logo.png'),
                       ),
-                      Text("Login",
+                      Text("Sign Up",
                           style: Theme.of(context).textTheme.headlineSmall),
                       Text("Yuk jadi lebih baik bersama Lucely",
                           style: Theme.of(context).textTheme.bodyLarge),
@@ -51,47 +53,55 @@ class LoginPage extends StatelessWidget {
                     placeholder: "Min. 8 Karakter",
                     isPassword: true,
                   ),
+                  const Gap(spacing * 3),
+                  const PrimaryInput(
+                    label: "Konfirmasi Kata Sandi",
+                    placeholder: "Min. 8 Karakter",
+                    isPassword: true,
+                  ),
                   const Gap(spacing * 4),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Wrap(
-                        direction: Axis.horizontal,
-                        spacing: spacing,
-                        crossAxisAlignment: WrapCrossAlignment.center,
-                        children: [
-                          SizedBox(
-                            width: spacing * 3,
-                            height: spacing * 3,
-                            child: Checkbox(
-                              checkColor: Colors.white,
-                              value: controller.isRememberMe.value,
-                              onChanged: (e) => controller.toggleRemember(),
-                            ),
-                          ),
-                          Text(
-                            "Ingat Saya",
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                        ],
-                      ),
-                      InkWell(
-                        onTap: () {},
-                        child: Text(
-                          "Lupa Kata Sandi?",
-                          style: Theme.of(context)
-                              .textTheme
-                              .bodyMedium!
-                              .copyWith(color: blue),
+                      SizedBox(
+                        width: spacing * 3,
+                        height: spacing * 3,
+                        child: Checkbox(
+                          checkColor: Colors.white,
+                          value: controller.isAgree.value,
+                          onChanged: (e) => controller.toggleRemember(),
                         ),
-                      )
+                      ),
+                      const Gap(spacing),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {},
+                          child: RichText(
+                            overflow: TextOverflow.clip,
+                            text: TextSpan(
+                                text: "Saya setuju dengan",
+                                style: Theme.of(context).textTheme.bodyMedium,
+                                children: const [
+                                  TextSpan(
+                                    text: " Terms of Service",
+                                    style: TextStyle(color: blue),
+                                  ),
+                                  TextSpan(text: " dan"),
+                                  TextSpan(
+                                    text: " Privacy Policy",
+                                    style: TextStyle(color: blue),
+                                  ),
+                                ]),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   const Gap(spacing * 4),
                   PrimaryButton(
                     onPressed: () {},
-                    title: "Login",
+                    title: "Buat Akun",
                     type: ButtonType.primary,
                     isLoading: false,
                   ),
@@ -100,14 +110,14 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Belum mempunyai akun?",
+                        "Sudah mempunyai akun?",
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const Gap(spacing / 2),
                       InkWell(
-                        onTap: () => Get.to(() => RegisterPage()),
+                        onTap: () => Get.to(() => const LoginPage()),
                         child: Text(
-                          "Buat Akun",
+                          "Masuk",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
@@ -115,7 +125,7 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                     ],
-                  ),
+                  )
                 ],
               ),
             ),

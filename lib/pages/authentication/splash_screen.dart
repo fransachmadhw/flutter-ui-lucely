@@ -1,34 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/pages/authentication/login_page.dart';
-import 'package:lucely_app/pages/authentication/splash_screen2.dart';
+import 'package:lucely_app/controller/pages/authentication/splash_screen_controller.dart';
 
-class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+class SplashScreen extends StatelessWidget {
+  SplashScreen({super.key});
 
-  @override
-  State<StatefulWidget> createState() => _SplashScreenState();
-}
-
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    pageDelay();
-  }
-
-  void pageDelay() {
-    Timer(
-      const Duration(seconds: 2),
-      () => Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const SplashScreen2(),
-          )),
-    );
-  }
+  final pageController = Get.put(SplashScreenController());
 
   @override
   Widget build(BuildContext context) {
