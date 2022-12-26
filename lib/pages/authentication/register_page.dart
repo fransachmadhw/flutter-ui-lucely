@@ -10,9 +10,7 @@ import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/controller/pages/authentication/register_page_controller.dart';
 
 class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
-
-  final pageController = Get.put(RegisterPageController());
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +57,7 @@ class RegisterPage extends StatelessWidget {
                     placeholder: "Min. 8 Karakter",
                     isPassword: true,
                   ),
-                  const Gap(spacing * 4),
+                  const Gap(spacing * 3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,

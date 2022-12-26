@@ -6,6 +6,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gap/gap.dart';
 import 'package:lucely_app/controller/pages/authentication/splash_screen2_controller.dart';
 import 'package:lucely_app/pages/authentication/login_page.dart';
+import 'package:lucely_app/pages/authentication/register_page.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 
 class SplashScreen2 extends StatelessWidget {
@@ -156,8 +157,7 @@ class SplashScreen2 extends StatelessWidget {
                 const Gap(spacing * 3),
                 PrimaryButton(
                   isLoading: false,
-                  onPressed: () => {},
-                  // onPressed: () => goToHome(),
+                  onPressed: () => Get.to(const RegisterPage()),
                   title: 'Buat Akun',
                   type: ButtonType.primary,
                 ),

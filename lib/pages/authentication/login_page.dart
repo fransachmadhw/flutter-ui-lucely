@@ -51,7 +51,7 @@ class LoginPage extends StatelessWidget {
                     placeholder: "Min. 8 Karakter",
                     isPassword: true,
                   ),
-                  const Gap(spacing * 4),
+                  const Gap(spacing * 3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,

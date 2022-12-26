@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/custom_text_themes.dart';
-import 'package:lucely_app/pages/authentication/login_page.dart';
 import 'package:lucely_app/pages/authentication/splash_screen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -29,7 +28,7 @@ class MyApp extends StatelessWidget {
                   secondary: columbiaBlue,
                 ),
           ),
-          home: const LoginPage(),
+          home: SplashScreen(),
         );
       },
     );
