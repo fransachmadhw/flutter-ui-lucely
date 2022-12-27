@@ -14,3 +14,5 @@ const Color darkGrey = Color(0xFF8C8C8C);
 const Color lightGrey = Color(0xFFD9D9D9);
 const Color veryLightGrey = Color(0xFFEEEEEE);
 const Color white = Color(0xFFfcffff);
+const Color yellow = Color(0xFFFFAE1B);
+const Color pink = Color(0xFFEF7AB6);

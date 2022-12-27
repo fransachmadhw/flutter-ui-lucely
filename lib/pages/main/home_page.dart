@@ -9,8 +9,11 @@ import 'package:iconify_flutter/icons/ph.dart';
 import 'package:iconify_flutter/icons/ri.dart';
 import 'package:iconify_flutter/icons/teenyicons.dart';
 import 'package:lucely_app/controller/pages/authentication/splash_screen2_controller.dart';
+import 'package:lucely_app/pages/main/notification_page.dart';
 import 'package:lucely_app/widgets/button/bookluce.dart';
+import 'package:lucely_app/widgets/button/event_button.dart';
 import 'package:lucely_app/widgets/button/feature_button.dart';
+import 'package:lucely_app/widgets/button/luceguide.dart';
 import 'package:sizer/sizer.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
@@ -48,7 +51,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () => Get.to(NotificationPage()),
                             style: ElevatedButton.styleFrom(
                                 elevation: 0,
                                 backgroundColor: Colors.transparent),
@@ -114,7 +117,7 @@ class HomePage extends StatelessWidget {
                       ),
                       Gap(spacing * 3),
                       SizedBox(
-                        height: 125,
+                        height: 145,
                         child: ListView(
                           scrollDirection: Axis.horizontal,
                           physics: const BouncingScrollPhysics(),
@@ -128,6 +131,8 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: EdgeInsets.all(spacing * 1.3),
                                 child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Column(
@@ -143,16 +148,19 @@ class HomePage extends StatelessWidget {
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight: FontWeight.w700,
-                                                    fontSize: 15)),
-                                        Text(
-                                            "Yuk, ceritakan permasalahanmu bersama psikolog",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium!
-                                                .copyWith(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10)),
+                                                    fontSize: 14)),
+                                        SizedBox(
+                                          width: 200,
+                                          child: Text(
+                                              "Yuk, ceritakan permasalahanmu bersama psikolog",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleMedium!
+                                                  .copyWith(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontSize: 10)),
+                                        ),
                                         Gap(spacing),
                                         ElevatedButton(
                                           onPressed: () {},
@@ -191,8 +199,8 @@ class HomePage extends StatelessWidget {
                                       ],
                                     ),
                                     SizedBox(
-                                      width: 90,
-                                      height: 90,
+                                      width: 80,
+                                      height: 80,
                                       child: Image.asset(
                                         'assets/images/psikolog2.png',
                                         // width: 90,
@@ -212,6 +220,8 @@ class HomePage extends StatelessWidget {
                               child: Padding(
                                 padding: EdgeInsets.all(spacing * 1.3),
                                 child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Column(
@@ -227,16 +237,19 @@ class HomePage extends StatelessWidget {
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight: FontWeight.w700,
-                                                    fontSize: 15)),
-                                        Text(
-                                            "Yuk, ceritakan permasalahanmu bersama mentor",
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .titleMedium!
-                                                .copyWith(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 10)),
+                                                    fontSize: 14)),
+                                        SizedBox(
+                                          width: 175,
+                                          child: Text(
+                                              "Yuk, ceritakan permasalahanmu bersama mentor",
+                                              style: Theme.of(context)
+                                                  .textTheme
+                                                  .titleMedium!
+                                                  .copyWith(
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      fontSize: 10)),
+                                        ),
                                         Gap(spacing),
                                         ElevatedButton(
                                           onPressed: () {},
@@ -275,8 +288,8 @@ class HomePage extends StatelessWidget {
                                       ],
                                     ),
                                     SizedBox(
-                                      width: 90,
-                                      height: 90,
+                                      width: 80,
+                                      height: 80,
                                       child: Image.asset(
                                         'assets/images/mentor2.png',
                                         // width: 90,
@@ -298,25 +311,28 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Bookluce Terbaru",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18)),
-                                Text(
-                                    "Baca ringkasan buku best seller internasional",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.normal,
-                                            fontSize: 12))
-                              ],
+                            SizedBox(
+                              width: 220,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("Bookluce Terbaru",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18)),
+                                  Text(
+                                      "Baca ringkasan buku best seller internasional",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 12))
+                                ],
+                              ),
                             ),
                             InkWell(
                               onTap: () {},
@@ -412,139 +428,29 @@ class HomePage extends StatelessWidget {
                           physics: const BouncingScrollPhysics(),
                           children: [
                             Gap(spacing * 3),
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 315,
-                                decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    border:
-                                        Border.all(width: 1, color: lightGrey),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Padding(
-                                  padding: EdgeInsets.all(spacing * 1.3),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        width: 74,
-                                        height: 74,
-                                        child: Image.asset(
-                                          'assets/images/event1.png',
-                                          // width: 90,
-                                          // height: 90,
-                                        ),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                              "Menciptakan Mindfullness Dalam\nAkademik",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                      fontSize: 13)),
-                                          Gap(spacing),
-                                          Text("Rabu, 27 Februari 2023",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 10)),
-                                          Text("14:00 - 15:30",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 10)),
-                                          Gap(spacing),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
+                            EventButton(
+                                onPressed: () {},
+                                image: 'assets/images/event1.png',
+                                title:
+                                    "Menciptakan Mindfullness Dalam\nAkademik",
+                                date: "Rabu, 27 Februari 2023",
+                                time: "14:00 - 15:30"),
                             Gap(spacing * 2),
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 315,
-                                decoration: BoxDecoration(
-                                    color: Colors.transparent,
-                                    border:
-                                        Border.all(width: 1, color: lightGrey),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Padding(
-                                  padding: EdgeInsets.all(spacing * 1.3),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      SizedBox(
-                                        width: 74,
-                                        height: 74,
-                                        child: Image.asset(
-                                          'assets/images/event1.png',
-                                          // width: 90,
-                                          // height: 90,
-                                        ),
-                                      ),
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                              "Menciptakan Mindfullness Dalam\nAkademik",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.w700,
-                                                      fontSize: 13)),
-                                          Gap(spacing),
-                                          Text("Rabu, 27 Februari 2023",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 10)),
-                                          Text("14:00 - 15:30",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 10)),
-                                          Gap(spacing),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ),
+                            EventButton(
+                                onPressed: () {},
+                                image: 'assets/images/event2.png',
+                                title:
+                                    "Menciptakan Mindfullness Dalam\nAkademik",
+                                date: "Rabu, 27 Februari 2023",
+                                time: "14:00 - 15:30"),
+                            Gap(spacing * 2),
+                            EventButton(
+                                onPressed: () {},
+                                image: 'assets/images/event3.png',
+                                title:
+                                    "Menciptakan Mindfullness Dalam\nAkademik",
+                                date: "Rabu, 27 Februari 2023",
+                                time: "14:00 - 15:30"),
                             Gap(spacing * 3),
                           ],
                         ),
@@ -556,25 +462,28 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("LuceGuide",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18)),
-                                Text(
-                                    "Dengarkan inspirasi dan self-help mandiri untuk\njadi lebih baik menjalani hari",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.normal,
-                                            fontSize: 12))
-                              ],
+                            SizedBox(
+                              width: 220,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text("LuceGuide",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18)),
+                                  Text(
+                                      "Dengarkan inspirasi dan self-help mandiri untuk jadi lebih baik menjalani hari",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyMedium!
+                                          .copyWith(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 12))
+                                ],
+                              ),
                             ),
                             InkWell(
                               onTap: () {},
@@ -596,120 +505,20 @@ class HomePage extends StatelessWidget {
                           physics: const BouncingScrollPhysics(),
                           children: [
                             Gap(spacing * 3),
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 315,
-                                decoration: BoxDecoration(
-                                    color: lemonChiffon,
-                                    // border:
-                                    //     Border.all(width: 0, color: lightGrey),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Padding(
-                                  padding: EdgeInsets.all(spacing * 1.3),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text("Mengatasi Kesepian",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 17)),
-                                          Gap(spacing),
-                                          Text("6 sesi singkat",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 12)),
-                                          Gap(spacing),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 95,
-                                        height: 74,
-                                        child: Image.asset(
-                                          'assets/images/Anxiety.png',
-                                          // width: 90,
-                                          // height: 90,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            LuceGuideButton(
+                              onPressed: () {},
+                              image: 'assets/images/Anxiety.png',
+                              title: "Mengatasi Kesepian",
+                              total: "6 sesi singkat",
+                              background: lemonChiffon,
                             ),
                             Gap(spacing * 2),
-                            InkWell(
-                              onTap: () {},
-                              child: Container(
-                                width: 315,
-                                decoration: BoxDecoration(
-                                    color: lemonChiffon,
-                                    // border:
-                                    //     Border.all(width: 0, color: lightGrey),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Padding(
-                                  padding: EdgeInsets.all(spacing * 1.3),
-                                  child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text("Mengatasi Kesepian",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 17)),
-                                          Gap(spacing),
-                                          Text("6 sesi singkat",
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .titleMedium!
-                                                  .copyWith(
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                      fontSize: 12)),
-                                          Gap(spacing),
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        width: 95,
-                                        height: 74,
-                                        child: Image.asset(
-                                          'assets/images/Anxiety.png',
-                                          // width: 90,
-                                          // height: 90,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
+                            LuceGuideButton(
+                              onPressed: () {},
+                              image: 'assets/images/demotivation.png',
+                              title: "Redakan Demotivation",
+                              total: "6 sesi singkat",
+                              background: pigPink,
                             ),
                             Gap(spacing * 3),
                           ],
