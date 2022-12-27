@@ -17,6 +17,7 @@ dependencies:
   gap: ^2.0.1
   get: ^4.6.5
   sizer: ^2.0.15
+  iconify_flutter: ^0.0.5
   flutter_svg: ^1.1.6
   iconify_flutter: ^0.0.5
 

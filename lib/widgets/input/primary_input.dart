@@ -24,7 +24,7 @@ class PrimaryInput extends StatelessWidget {
         hintText: placeholder ?? "",
         labelStyle: const TextStyle(color: blue),
         enabledBorder: OutlineInputBorder(
-          borderSide: const BorderSide(color: blue, width: 2),
+          borderSide: const BorderSide(color: blue, width: 1),
           borderRadius: BorderRadius.circular(radius),
         ),
         border: OutlineInputBorder(
