@@ -9,7 +9,7 @@ class MainAppController extends GetxController {
   final pages = [
     const HomePage(),
     const CounselingPage(),
-    const NotificationPage(),
+    const ExplorePage(),
     const ExplorePage(),
   ];
 
