@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:lucely_app/pages/main/account_page.dart';
 import 'package:lucely_app/pages/main/counseling_page.dart';
 import 'package:lucely_app/pages/main/explore_page.dart';
 import 'package:lucely_app/pages/main/home_page.dart';
@@ -10,7 +11,7 @@ class MainAppController extends GetxController {
     const HomePage(),
     const CounselingPage(),
     const ExplorePage(),
-    const ExplorePage(),
+    const AccountPage(),
   ];
 
   void setPageIndex(int index) {

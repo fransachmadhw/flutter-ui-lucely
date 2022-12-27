@@ -28,7 +28,7 @@ class RoundedSearchInput extends StatelessWidget {
             ),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: blue, width: 2),
+            borderSide: const BorderSide(color: blue, width: 1),
             borderRadius: BorderRadius.circular(radius * 5),
           ),
           border: OutlineInputBorder(
