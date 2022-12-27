@@ -18,6 +18,7 @@ dependencies:
   get: ^4.6.5
   sizer: ^2.0.15
   flutter_svg: ^1.1.6
+  iconify_flutter: ^0.0.5
 
 dev_dependencies:
   flutter_test:
