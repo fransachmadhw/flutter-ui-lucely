@@ -31,6 +31,57 @@ class ContactAdmin extends StatelessWidget {
                 .titleMedium!
                 .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
       ),
+      body: SafeArea(
+          child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(spacing * 3),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: spacing * 3),
+                    child: Image.asset(
+                      'assets/images/kontak_admin.png',
+                      width: 300,
+                      // height: 224,
+                    ),
+                  ),
+                ],
+              ),
+              Text("JAM KERJA : 08.00 - 17.00 WIB",
+                  // textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+              Gap(spacing * 3),
+              Text("Silahkan menghubungi kami melalui",
+                  // textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
+              Gap(spacing * 2),
+              Text("E-mail - info@lucely.id",
+                  // textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
+              Gap(spacing * 2),
+              Text("WhatsApp - 081xxxxxxxxxx",
+                  // textAlign: TextAlign.center,
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleMedium!
+                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
+            ],
+          ),
+        ),
+      )),
     );
   }
 }
