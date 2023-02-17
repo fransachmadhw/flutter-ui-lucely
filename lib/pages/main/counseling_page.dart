@@ -59,7 +59,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -87,7 +87,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -122,7 +122,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -150,7 +150,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -185,7 +185,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -213,7 +213,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -248,7 +248,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -276,7 +276,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -311,7 +311,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -339,7 +339,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -411,7 +411,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -439,7 +439,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -476,7 +476,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -504,7 +504,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -539,7 +539,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -567,7 +567,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -604,7 +604,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -634,7 +634,7 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(Colors.white),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -702,7 +702,7 @@ class CounselingPage extends StatelessWidget {
                 onPressed: () => openPsikologDialog(),
                 style: ButtonStyle(
                   elevation: MaterialStateProperty.all(0),
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  backgroundColor: MaterialStateProperty.all(white),
                   shape: MaterialStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(radius * 2),
@@ -769,7 +769,7 @@ class CounselingPage extends StatelessWidget {
                 onPressed: () => openMentorDialog(),
                 style: ButtonStyle(
                   elevation: MaterialStateProperty.all(0),
-                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  backgroundColor: MaterialStateProperty.all(white),
                   shape: MaterialStateProperty.all(
                     RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(radius * 2),

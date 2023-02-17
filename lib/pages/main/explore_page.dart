@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
+import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/widgets/card/category_card.dart';
 import 'package:lucely_app/widgets/input/rounded_search_input.dart';
@@ -12,6 +13,7 @@ class ExplorePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Container(
