@@ -524,7 +524,7 @@ class HomePage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Gap(spacing * 15),
+                      Gap(spacing * 3),
                     ],
                   )),
               Padding(
