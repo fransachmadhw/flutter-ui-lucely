@@ -15,6 +15,10 @@ import 'package:lucely_app/widgets/dialog/success_dialog.dart';
 class CounselingPage extends StatelessWidget {
   const CounselingPage({super.key});
 
+  Future<bool> _onWillPop() async {
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
     void openPsikologDialog() {
@@ -59,7 +63,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -87,7 +99,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -122,7 +142,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -150,7 +178,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -185,7 +221,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -213,7 +257,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -248,7 +300,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -276,7 +336,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -311,7 +379,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -339,7 +415,15 @@ class CounselingPage extends StatelessWidget {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.all(white),
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -662,179 +746,176 @@ class CounselingPage extends StatelessWidget {
               ));
     }
 
-    return Scaffold(
-      backgroundColor: white,
-      appBar: AppBar(
-        shape: Border(bottom: BorderSide(color: veryLightGrey, width: 1)),
-        backgroundColor: white,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: IconButton(
-            onPressed: () => Get.back(),
-            icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
-        centerTitle: true,
-        title: Text("Pilih yang tepat untukmu",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
-      ),
-      body: SafeArea(
-          child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(spacing * 3),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              Text("Temukan konselor yang tepat, yuk!",
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
-              Text("Diskusi langsung sekaligus bedah kasus bareng ahlinya",
-                  maxLines: 2,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
-              Gap(spacing * 3),
-              ElevatedButton(
-                onPressed: () => openPsikologDialog(),
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(0),
-                  backgroundColor: MaterialStateProperty.all(white),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(radius * 2),
-                      side: const BorderSide(
-                        width: 1,
-                        color: blue,
-                      ),
-                    ),
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      vertical: spacing * 3, horizontal: spacing * 1),
-                  child: Container(
-                      // width: 315,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/psikolog.png",
-                            width: 100,
-                            // height: 90,
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Psikolog",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 17)),
-                                Gap(spacing * 1),
-                                SizedBox(
-                                  width: 200,
-                                  child: Text(
-                                      "Kesehatan mentalmu adalah prioritas utama",
-                                      maxLines: 3,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium!
-                                          .copyWith(
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 13,
-                                              color: darkGrey)),
-                                ),
-                                Gap(spacing * 2),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-              ),
-              Gap(spacing * 2),
-              ElevatedButton(
-                onPressed: () => openMentorDialog(),
-                style: ButtonStyle(
-                  elevation: MaterialStateProperty.all(0),
-                  backgroundColor: MaterialStateProperty.all(white),
-                  shape: MaterialStateProperty.all(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(radius * 2),
-                      side: const BorderSide(
-                        width: 1,
-                        color: blue,
-                      ),
-                    ),
-                  ),
-                ),
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      vertical: spacing * 3, horizontal: spacing * 1),
-                  child: Container(
-                      // width: 315,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            "assets/images/mentor.png",
-                            width: 100,
-                            // height: 90,
-                          ),
-                          SizedBox(
-                            width: 150,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text("Mentor",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 17)),
-                                Gap(spacing * 1),
-                                SizedBox(
-                                  width: 200,
-                                  child: Text(
-                                      "Jadi versi terbaik dirimu dan sukses meraih impian",
-                                      maxLines: 3,
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .titleMedium!
-                                          .copyWith(
-                                              fontWeight: FontWeight.normal,
-                                              fontSize: 13,
-                                              color: darkGrey)),
-                                ),
-                                Gap(spacing * 2),
-                              ],
-                            ),
-                          ),
-                        ],
-                      )),
-                ),
-              ),
-            ],
+    return WillPopScope(
+        onWillPop: _onWillPop,
+        child: Scaffold(
+          backgroundColor: white,
+          appBar: AppBar(
+            shape: Border(bottom: BorderSide(color: veryLightGrey, width: 1)),
+            backgroundColor: white,
+            elevation: 0,
+            automaticallyImplyLeading: false,
+            centerTitle: true,
+            title: Text("Pilih yang tepat untukmu",
+                style: Theme.of(context)
+                    .textTheme
+                    .titleMedium!
+                    .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
           ),
-        ),
-      )),
-    );
+          body: SafeArea(
+              child: SingleChildScrollView(
+            child: Padding(
+              padding: EdgeInsets.all(spacing * 3),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Text("Temukan konselor yang tepat, yuk!",
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleMedium!
+                          .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+                  Text("Diskusi langsung sekaligus bedah kasus bareng ahlinya",
+                      maxLines: 2,
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          fontWeight: FontWeight.normal, fontSize: 14)),
+                  Gap(spacing * 3),
+                  ElevatedButton(
+                    onPressed: () => openPsikologDialog(),
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
+                      backgroundColor: MaterialStateProperty.all(white),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(radius * 2),
+                          side: const BorderSide(
+                            width: 1,
+                            color: blue,
+                          ),
+                        ),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: spacing * 3, horizontal: spacing * 1),
+                      child: Container(
+                          // width: 315,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/images/psikolog.png",
+                                width: 100,
+                                // height: 90,
+                              ),
+                              SizedBox(
+                                width: 150,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Psikolog",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium!
+                                            .copyWith(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 17)),
+                                    Gap(spacing * 1),
+                                    SizedBox(
+                                      width: 200,
+                                      child: Text(
+                                          "Kesehatan mentalmu adalah prioritas utama",
+                                          maxLines: 3,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium!
+                                              .copyWith(
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 13,
+                                                  color: darkGrey)),
+                                    ),
+                                    Gap(spacing * 2),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
+                  Gap(spacing * 2),
+                  ElevatedButton(
+                    onPressed: () => openMentorDialog(),
+                    style: ButtonStyle(
+                      elevation: MaterialStateProperty.all(0),
+                      backgroundColor: MaterialStateProperty.all(white),
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(radius * 2),
+                          side: const BorderSide(
+                            width: 1,
+                            color: blue,
+                          ),
+                        ),
+                      ),
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: spacing * 3, horizontal: spacing * 1),
+                      child: Container(
+                          // width: 315,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                "assets/images/mentor.png",
+                                width: 100,
+                                // height: 90,
+                              ),
+                              SizedBox(
+                                width: 150,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Mentor",
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .titleMedium!
+                                            .copyWith(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: 17)),
+                                    Gap(spacing * 1),
+                                    SizedBox(
+                                      width: 200,
+                                      child: Text(
+                                          "Jadi versi terbaik dirimu dan sukses meraih impian",
+                                          maxLines: 3,
+                                          style: Theme.of(context)
+                                              .textTheme
+                                              .titleMedium!
+                                              .copyWith(
+                                                  fontWeight: FontWeight.normal,
+                                                  fontSize: 13,
+                                                  color: darkGrey)),
+                                    ),
+                                    Gap(spacing * 2),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          )),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )),
+        ));
   }
 }

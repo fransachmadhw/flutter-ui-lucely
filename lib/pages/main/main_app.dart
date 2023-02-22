@@ -39,17 +39,18 @@ class MainApp extends StatelessWidget {
             type: BottomNavigationBarType.fixed,
             items: <BottomNavigationBarItem>[
               BottomNavigationBarItem(
-                  icon: Padding(
-                    padding: const EdgeInsets.only(bottom: spacing / 2),
-                    child: SvgPicture.asset(
-                      'assets/images/icons/home_outline.svg',
-                      color: controller.currentPageIndex.value == 0
-                          ? blue
-                          : darkGrey,
-                      width: spacing * 3,
-                    ),
+                icon: Padding(
+                  padding: const EdgeInsets.only(bottom: spacing / 2),
+                  child: SvgPicture.asset(
+                    'assets/images/icons/home_outline.svg',
+                    color: controller.currentPageIndex.value == 0
+                        ? blue
+                        : darkGrey,
+                    width: spacing * 3,
                   ),
-                  label: "Home"),
+                ),
+                label: "Home",
+              ),
               BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.only(bottom: spacing / 2),

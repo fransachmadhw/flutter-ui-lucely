@@ -12,13 +12,114 @@ import 'package:lucely_app/data/psychologist_model.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 import 'package:lucely_app/widgets/card/psychologist_review_card.dart';
 
-class PsychologistPage extends StatelessWidget {
+class PsychologistPage extends StatefulWidget {
   final PsychologistModel psychologistModel;
-
   const PsychologistPage({super.key, required this.psychologistModel});
 
   @override
+  State<StatefulWidget> createState() => _PsychologistPageState();
+}
+
+class _PsychologistPageState extends State<PsychologistPage> {
+  bool _paketSatuActive = false;
+
+  @override
   Widget build(BuildContext context) {
+    // PsychologistModel psychologistModelLocal = this.psychologistModel;
+    bool paketDuaActive = false;
+
+    void openModal() {
+      showModalBottomSheet(
+          enableDrag: true,
+          isDismissible: true,
+          backgroundColor: white,
+          shape: RoundedRectangleBorder(
+              borderRadius:
+                  BorderRadius.vertical(top: Radius.circular(radius * 2))),
+          context: context,
+          builder: (context) => Container(
+                padding: EdgeInsets.all(spacing * 2),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 80,
+                      height: 5,
+                      decoration: BoxDecoration(
+                          color: lightGrey,
+                          borderRadius: BorderRadius.circular(radius * 5)),
+                    ),
+                    Gap(spacing * 5),
+                    Text("Paket apa yang ingin kamu pilih\nuntuk konseling?",
+                        maxLines: 2,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context)
+                            .textTheme
+                            .titleMedium!
+                            .copyWith(
+                                fontWeight: FontWeight.w700, fontSize: 20)),
+                    Gap(spacing * 3),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: spacing * 2),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          ElevatedButton(
+                              onPressed: () => {
+                                    setState(() {
+                                      _paketSatuActive = !_paketSatuActive;
+                                    })
+                                  },
+                              style: ButtonStyle(
+                                elevation: MaterialStateProperty.all(0),
+                                backgroundColor:
+                                    MaterialStateProperty.all(white),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(radius * 2),
+                                    side: BorderSide(
+                                      width: 1,
+                                      color:
+                                          _paketSatuActive ? blue : lightGrey,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              child: Container(
+                                width: 120,
+                                height: 100,
+                              )),
+                          ElevatedButton(
+                              onPressed: () {},
+                              style: ButtonStyle(
+                                elevation: MaterialStateProperty.all(0),
+                                backgroundColor:
+                                    MaterialStateProperty.all(white),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(radius * 2),
+                                    side: const BorderSide(
+                                      width: 1,
+                                      color: blue,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              child: Container(
+                                width: 120,
+                                height: 100,
+                              )),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ));
+    }
+
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -55,13 +156,13 @@ class PsychologistPage extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         image: DecorationImage(
-                          image: AssetImage(psychologistModel.imageUrl),
+                          image: AssetImage(widget.psychologistModel.imageUrl),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                     Gap(spacing * 2),
-                    Text(psychologistModel.name,
+                    Text(widget.psychologistModel.name,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -101,7 +202,7 @@ class PsychologistPage extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Profil ${psychologistModel.name}",
+                    Text("Profil ${widget.psychologistModel.name}",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -116,7 +217,7 @@ class PsychologistPage extends StatelessWidget {
                     ),
                     Gap(spacing),
                     Text(
-                        "${psychologistModel.name} adalah seorang psikolog klinis lulusan Harvard. Beliau memiliki ketertarikan dalam menanggani kasus seperti kecemasan, depresi, pengembangan diri, dan keluarga. Beliau percaya bahwa mengontrol untuk selalu berpikiran positif mampu menjalani hidup dengan baik.",
+                        "${widget.psychologistModel.name} adalah seorang psikolog klinis lulusan Harvard. Beliau memiliki ketertarikan dalam menanggani kasus seperti kecemasan, depresi, pengembangan diri, dan keluarga. Beliau percaya bahwa mengontrol untuk selalu berpikiran positif mampu menjalani hidup dengan baik.",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -180,7 +281,7 @@ class PsychologistPage extends StatelessWidget {
                       ],
                     ),
                     Gap(spacing * 4),
-                    Text("Review Psikolog ${psychologistModel.name}",
+                    Text("Review Psikolog ${widget.psychologistModel.name}",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -230,7 +331,7 @@ class PsychologistPage extends StatelessWidget {
                 // mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   PrimaryButton(
-                      onPressed: () {},
+                      onPressed: () => openModal(),
                       title: "Pilih Konselor",
                       type: ButtonType.primary,
                       isLoading: false)

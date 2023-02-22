@@ -24,9 +24,17 @@ class PrimaryButton extends StatelessWidget {
           !isLoading ? onPressed() : {}, // prevent click when state is loading
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(0),
-        backgroundColor: MaterialStateProperty.all(
-          type == ButtonType.primary ? blue : white,
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (Set<MaterialState> states) {
+            if (states.contains(MaterialState.pressed)) {
+              return type == ButtonType.primary ? columbiaBlue : columbiaBlue;
+            }
+            return type == ButtonType.primary ? blue : white;
+          },
         ),
+        // MaterialStateProperty.all(
+        //   type == ButtonType.primary ? blue : white,
+        // ),
         padding: MaterialStateProperty.all(
           const EdgeInsets.symmetric(vertical: spacing * 2.2),
         ),

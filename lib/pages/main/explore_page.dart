@@ -10,62 +10,68 @@ import 'package:lucely_app/widgets/input/rounded_search_input.dart';
 class ExplorePage extends StatelessWidget {
   const ExplorePage({super.key});
 
+  Future<bool> _onWillPop() async {
+    return false;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: white,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
-            padding: const EdgeInsets.all(spacing * 3),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Text(
-                  "Awal kesejateraan mentalmu dimulai dari sini..",
-                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                const Gap(spacing * 3),
-                const RoundedSearchInput(
-                  placeholder: "Cari topik permasalahan",
-                ),
-                const Gap(spacing * 3),
-                Wrap(
-                  direction: Axis.horizontal,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  alignment: WrapAlignment.start,
-                  spacing: spacing,
-                  children: const [
-                    CategoryCard(label: "Kecemasan"),
-                    CategoryCard(label: "Overthinking"),
-                    CategoryCard(label: "Pendidikan"),
-                    CategoryCard(label: "Stress"),
-                    CategoryCard(label: "Keluarga"),
-                    CategoryCard(label: "Self-development"),
-                    CategoryCard(label: "Self-love"),
-                    CategoryCard(label: "Productivity")
+    return WillPopScope(
+        onWillPop: _onWillPop,
+        child: Scaffold(
+          backgroundColor: white,
+          body: SafeArea(
+            child: SingleChildScrollView(
+              child: Container(
+                padding: const EdgeInsets.all(spacing * 3),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(
+                      "Awal kesejateraan mentalmu dimulai dari sini..",
+                      style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                    ),
+                    const Gap(spacing * 3),
+                    const RoundedSearchInput(
+                      placeholder: "Cari topik permasalahan",
+                    ),
+                    const Gap(spacing * 3),
+                    Wrap(
+                      direction: Axis.horizontal,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      alignment: WrapAlignment.start,
+                      spacing: spacing,
+                      children: const [
+                        CategoryCard(label: "Kecemasan"),
+                        CategoryCard(label: "Overthinking"),
+                        CategoryCard(label: "Pendidikan"),
+                        CategoryCard(label: "Stress"),
+                        CategoryCard(label: "Keluarga"),
+                        CategoryCard(label: "Self-development"),
+                        CategoryCard(label: "Self-love"),
+                        CategoryCard(label: "Productivity")
+                      ],
+                    ),
+                    const Gap(spacing * 3),
+                    Wrap(
+                      direction: Axis.horizontal,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      alignment: WrapAlignment.start,
+                      spacing: spacing,
+                      children: const [
+                        CategoryCard(label: "Konseling"),
+                        CategoryCard(label: "Bookluce"),
+                        CategoryCard(label: "Event"),
+                        CategoryCard(label: "LuceGuide")
+                      ],
+                    )
                   ],
                 ),
-                const Gap(spacing * 3),
-                Wrap(
-                  direction: Axis.horizontal,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  alignment: WrapAlignment.start,
-                  spacing: spacing,
-                  children: const [
-                    CategoryCard(label: "Konseling"),
-                    CategoryCard(label: "Bookluce"),
-                    CategoryCard(label: "Event"),
-                    CategoryCard(label: "LuceGuide")
-                  ],
-                )
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
