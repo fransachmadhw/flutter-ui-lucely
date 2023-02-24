@@ -26,7 +26,7 @@ class GetHelp extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("FAQ dan Bantuan",
+        title: Text("FAQ and Help",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -98,7 +98,7 @@ class GetHelp extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text("Tentang App",
+                            Text("About App",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -140,7 +140,7 @@ class GetHelp extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text("Kebijakan Privasi",
+                            Text("Privacy Policy",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -182,7 +182,7 @@ class GetHelp extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text("Syarat & Ketentuan",
+                            Text("Terms & Conditions",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -224,7 +224,7 @@ class GetHelp extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            Text("Masukan & Saran",
+                            Text("Send Feedback",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!

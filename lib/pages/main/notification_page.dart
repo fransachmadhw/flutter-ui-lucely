@@ -13,6 +13,7 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: white,
       appBar: AppBar(
         backgroundColor: white,
         elevation: 0,
@@ -20,7 +21,7 @@ class NotificationPage extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Notifikasi",
+        title: Text("Notification",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -64,14 +65,15 @@ class NotificationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("1 Hari menuju Webinar Mind Management",
+                            Text("1 day to Mind Management Webinar",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
                                     .copyWith(
                                         fontWeight: FontWeight.w700,
                                         fontSize: 11)),
-                            Text("klik untuk mengetahui cara mengikuti event",
+                            Text("Click to see on how ton join the event",
+                                maxLines: 2,
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -81,7 +83,7 @@ class NotificationPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Text("22 Okt",
+                      Text("Oct 22",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
@@ -125,7 +127,7 @@ class NotificationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("Sering bimbang dalam membuat keputusan?",
+                            Text("Anxious while creating a decision?",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -133,7 +135,7 @@ class NotificationPage extends StatelessWidget {
                                         fontWeight: FontWeight.w700,
                                         fontSize: 11)),
                             Text(
-                                "[BOOKLUCE] Thinking, Fast, and Slow bisa bantu kamu ambil keputusan dengan bijak. Yuk baca bukunya",
+                                "[BOOKLUCE] Thinking, Fast, and Slow can help your problem",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -143,7 +145,7 @@ class NotificationPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Text("22 Okt",
+                      Text("Oct 22",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
@@ -187,14 +189,15 @@ class NotificationPage extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text("1 Hari menuju Webinar Mind Management",
+                            Text("1 day to Mind Management Webinar",
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
                                     .copyWith(
                                         fontWeight: FontWeight.w700,
                                         fontSize: 11)),
-                            Text("klik untuk mengetahui cara mengikuti event",
+                            Text("Click to see on how ton join the event",
+                                maxLines: 2,
                                 style: Theme.of(context)
                                     .textTheme
                                     .titleMedium!
@@ -204,7 +207,7 @@ class NotificationPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Text("22 Okt",
+                      Text("Oct 22",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!

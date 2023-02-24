@@ -58,7 +58,11 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             ElevatedButton(
-                                onPressed: () => Get.to(NotificationPage()),
+                                onPressed: () => Get.to(
+                                    () => NotificationPage(),
+                                    transition: Transition.rightToLeft,
+                                    duration:
+                                        const Duration(milliseconds: 500)),
                                 style: ElevatedButton.styleFrom(
                                     elevation: 0,
                                     backgroundColor: Colors.transparent),
@@ -75,7 +79,8 @@ class HomePage extends StatelessWidget {
                                     fontWeight: FontWeight.w700, fontSize: 24)),
                         Gap(spacing * 1),
                         Text(
-                            "Yuk ceritakan isi hatimu, temukan jalan\nkeluar atas permasalahanmu.",
+                            "Tell me what's in your mind and your heart,\nfind the way out of your problem.",
+                            maxLines: 3,
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
@@ -103,7 +108,7 @@ class HomePage extends StatelessWidget {
                               FeatureButton(
                                 onPressed: () {},
                                 image: "assets/images/Counseling.png",
-                                label: "Konseling",
+                                label: "Counseling",
                               ),
                               FeatureButton(
                                 onPressed: () {},
@@ -149,8 +154,7 @@ class HomePage extends StatelessWidget {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            Text(
-                                                "Tingkatkan\nKesejahteraan Mentalmu",
+                                            Text("Improve\nyour mental health",
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .titleMedium!
@@ -161,7 +165,7 @@ class HomePage extends StatelessWidget {
                                             SizedBox(
                                               width: 200,
                                               child: Text(
-                                                  "Yuk, ceritakan permasalahanmu bersama psikolog",
+                                                  "Tell your problem with psychologists",
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .titleMedium!
@@ -245,7 +249,8 @@ class HomePage extends StatelessWidget {
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                                "Upgrade Diri Untuk Menjadi\nVersi Terbaikmu",
+                                                "Upgrade yourself to be\nthe best of you",
+                                                maxLines: 2,
                                                 style: Theme.of(context)
                                                     .textTheme
                                                     .titleMedium!
@@ -256,7 +261,7 @@ class HomePage extends StatelessWidget {
                                             SizedBox(
                                               width: 175,
                                               child: Text(
-                                                  "Yuk, ceritakan permasalahanmu bersama mentor",
+                                                  "Tell your problem with mentors",
                                                   style: Theme.of(context)
                                                       .textTheme
                                                       .titleMedium!
@@ -293,7 +298,7 @@ class HomePage extends StatelessWidget {
                                               ),
                                               child: Center(
                                                   child: Text(
-                                                      "Konseling dengan Mentor",
+                                                      "Counseling with mentors",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .titleMedium!
@@ -336,7 +341,7 @@ class HomePage extends StatelessWidget {
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
-                                      Text("Bookluce Terbaru",
+                                      Text("Latest Bookluces",
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyMedium!
@@ -344,7 +349,7 @@ class HomePage extends StatelessWidget {
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 18)),
                                       Text(
-                                          "Baca ringkasan buku best seller internasional",
+                                          "Read the summary of best-selling books",
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyMedium!
@@ -356,7 +361,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 InkWell(
                                   onTap: () {},
-                                  child: Text("Lihat Semua",
+                                  child: Text("See more",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
@@ -411,15 +416,14 @@ class HomePage extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Event Terdekat",
+                                    Text("Nearest Events",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18)),
-                                    Text(
-                                        "Diskusi langsung sekaligus bedah kasus\nbareng ahlinya",
+                                    Text("Discuss together with the experts",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyMedium!
@@ -430,7 +434,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 InkWell(
                                   onTap: () {},
-                                  child: Text("Lihat Semua",
+                                  child: Text("See more",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
@@ -451,24 +455,21 @@ class HomePage extends StatelessWidget {
                                 EventButton(
                                     onPressed: () {},
                                     image: 'assets/images/event1.png',
-                                    title:
-                                        "Menciptakan Mindfullness Dalam\nAkademik",
+                                    title: "Create Mindfullness in\nAcademic",
                                     date: "Rabu, 27 Februari 2023",
                                     time: "14:00 - 15:30"),
                                 Gap(spacing * 2),
                                 EventButton(
                                     onPressed: () {},
                                     image: 'assets/images/event2.png',
-                                    title:
-                                        "Menciptakan Mindfullness Dalam\nAkademik",
+                                    title: "Create Mindfullness in\nAcademic",
                                     date: "Rabu, 27 Februari 2023",
                                     time: "14:00 - 15:30"),
                                 Gap(spacing * 2),
                                 EventButton(
                                     onPressed: () {},
                                     image: 'assets/images/event3.png',
-                                    title:
-                                        "Menciptakan Mindfullness Dalam\nAkademik",
+                                    title: "Create Mindfullness in\nAcademic",
                                     date: "Rabu, 27 Februari 2023",
                                     time: "14:00 - 15:30"),
                                 Gap(spacing * 3),
@@ -496,7 +497,7 @@ class HomePage extends StatelessWidget {
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 18)),
                                       Text(
-                                          "Dengarkan inspirasi dan self-help mandiri untuk jadi lebih baik menjalani hari",
+                                          "Listen to inspiration which can make your mental healthier",
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodyMedium!
@@ -508,7 +509,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 InkWell(
                                   onTap: () {},
-                                  child: Text("Lihat Semua",
+                                  child: Text("See more",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
@@ -529,7 +530,7 @@ class HomePage extends StatelessWidget {
                                 LuceGuideButton(
                                   onPressed: () {},
                                   image: 'assets/images/Anxiety.png',
-                                  title: "Mengatasi Kesepian",
+                                  title: "Overcome a lonely",
                                   total: "6 sesi singkat",
                                   background: lemonChiffon,
                                 ),
@@ -537,7 +538,7 @@ class HomePage extends StatelessWidget {
                                 LuceGuideButton(
                                   onPressed: () {},
                                   image: 'assets/images/demotivation.png',
-                                  title: "Redakan Demotivation",
+                                  title: "Overcome a demotivation",
                                   total: "6 sesi singkat",
                                   background: pigPink,
                                 ),

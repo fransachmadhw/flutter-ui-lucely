@@ -25,7 +25,7 @@ class About extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Tentang App",
+        title: Text("About App",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!

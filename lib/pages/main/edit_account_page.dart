@@ -24,7 +24,7 @@ class EditAccount extends StatelessWidget {
       showDialog(
         context: context,
         builder: (BuildContext context) => SuccessDialog(
-          title: "Akun Berhasil Diperbarui",
+          title: "Account updated successfully",
           // subTitle: "Akun Berhasil Diperbarui",
           onPressed: () => Get.to(() => MainApp()),
           image: 'assets/images/akun_berhasil.png',
@@ -43,7 +43,7 @@ class EditAccount extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Edit Akun",
+        title: Text("Edit Account",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -72,17 +72,17 @@ class EditAccount extends StatelessWidget {
               ),
               Gap(spacing * 3),
               const PrimaryInput(
-                label: "Nama Depan",
+                label: "First name",
                 placeholder: "Sayonara",
               ),
               Gap(spacing * 2),
               const PrimaryInput(
-                label: "Nama Belakang",
+                label: "Last name",
                 placeholder: "Sayonara",
               ),
               Gap(spacing * 2),
               const PrimaryInput(
-                label: "No WhatsApp",
+                label: "WhatsApp number",
                 placeholder: "089xxxxxxxxx",
               ),
               Gap(spacing * 2),
@@ -125,7 +125,7 @@ class EditAccount extends StatelessWidget {
                             width: spacing * 3,
                           ),
                           Gap(spacing * 1),
-                          Text("Ganti Kata Sandi",
+                          Text("Change Password",
                               style: Theme.of(context)
                                   .textTheme
                                   .titleMedium!

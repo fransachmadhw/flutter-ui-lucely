@@ -28,14 +28,14 @@ class ExplorePage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Text(
-                      "Awal kesejateraan mentalmu dimulai dari sini..",
+                      "Start to treat your mental-health from here..",
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                     ),
                     const Gap(spacing * 3),
                     const RoundedSearchInput(
-                      placeholder: "Cari topik permasalahan",
+                      placeholder: "Find the problem topic",
                     ),
                     const Gap(spacing * 3),
                     Wrap(
@@ -44,11 +44,11 @@ class ExplorePage extends StatelessWidget {
                       alignment: WrapAlignment.start,
                       spacing: spacing,
                       children: const [
-                        CategoryCard(label: "Kecemasan"),
+                        CategoryCard(label: "Anxiety"),
                         CategoryCard(label: "Overthinking"),
-                        CategoryCard(label: "Pendidikan"),
+                        CategoryCard(label: "Education"),
                         CategoryCard(label: "Stress"),
-                        CategoryCard(label: "Keluarga"),
+                        CategoryCard(label: "Family"),
                         CategoryCard(label: "Self-development"),
                         CategoryCard(label: "Self-love"),
                         CategoryCard(label: "Productivity")
@@ -61,7 +61,7 @@ class ExplorePage extends StatelessWidget {
                       alignment: WrapAlignment.start,
                       spacing: spacing,
                       children: const [
-                        CategoryCard(label: "Konseling"),
+                        CategoryCard(label: "Counseling"),
                         CategoryCard(label: "Bookluce"),
                         CategoryCard(label: "Event"),
                         CategoryCard(label: "LuceGuide")

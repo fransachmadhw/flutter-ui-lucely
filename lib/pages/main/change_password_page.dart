@@ -22,7 +22,7 @@ class ChangePassword extends StatelessWidget {
       showDialog(
         context: context,
         builder: (BuildContext context) => SuccessDialog(
-          title: "Kata Sandi Berhasil Diganti",
+          title: "Password updated successfully",
           // subTitle: "Akun Berhasil Diperbarui",
           onPressed: () => Get.to(() => MainApp()),
           image: 'assets/images/kata_sandi_berhasil.png',
@@ -41,7 +41,7 @@ class ChangePassword extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Ganti Kata Sandi",
+        title: Text("Change Password",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -65,7 +65,7 @@ class ChangePassword extends StatelessWidget {
             Gap(spacing * 2),
             SizedBox(
               width: 10,
-              child: Text("Isikan kata sandi lama dan\nkata sandi baru anda",
+              child: Text("Type your old password and\nyour new password",
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!
@@ -79,22 +79,22 @@ class ChangePassword extends StatelessWidget {
             ),
             Gap(spacing * 2),
             const PrimaryInput(
-              label: "Kata Sandi Lama",
-              placeholder: "kata sandi lama",
+              label: "Old password",
+              placeholder: "Old password",
               // textInputType: TextInputType.emailAddress,
               isPassword: true,
             ),
             Gap(spacing * 2),
             const PrimaryInput(
-              label: "Kata Sandi Baru",
-              placeholder: "kata sandi baru",
+              label: "New password",
+              placeholder: "New password",
               // textInputType: TextInputType.emailAddress,
               isPassword: true,
             ),
             Gap(spacing * 7),
             PrimaryButton(
               onPressed: () => openDialog(),
-              title: "Ganti Kata Sandi",
+              title: "Change password",
               type: ButtonType.primary,
               isLoading: false,
             ),

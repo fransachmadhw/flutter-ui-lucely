@@ -41,7 +41,7 @@ class SplashScreen2 extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text('Upgrade Diri',
+                                    Text('Upgrade Yourself',
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context)
                                             .textTheme
@@ -51,7 +51,7 @@ class SplashScreen2 extends StatelessWidget {
                                     SizedBox(
                                       width: 220,
                                       child: Text(
-                                          'Meningkatkan diri dengan membaca intisari buku-buku terbaik dalam waktu kurang dari 20 menit',
+                                          'Improve yourself by reading the best-selling books in less than 20 minutes',
                                           textAlign: TextAlign.center,
                                           style: Theme.of(context)
                                               .textTheme
@@ -74,7 +74,7 @@ class SplashScreen2 extends StatelessWidget {
                                     SizedBox(
                                       width: 240,
                                       child: Text(
-                                        'Dengarkan inspirasi untuk kesejahteraan mental yang lebih baik dalam menjalani hari',
+                                        'Listen to inspiration which can make your mental healthier',
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context)
                                             .textTheme
@@ -88,7 +88,7 @@ class SplashScreen2 extends StatelessWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
-                                    Text('Menjadi Lebih Baik',
+                                    Text('Be better',
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context)
                                             .textTheme
@@ -98,7 +98,7 @@ class SplashScreen2 extends StatelessWidget {
                                     SizedBox(
                                       width: 220,
                                       child: Text(
-                                        'Dapatkan inspirasi dengan diskusi langsung dari para psikolog dan life mentor experts yang terpecaya',
+                                        'Be inspired by dicussing in person with expert psychologists and mentors',
                                         textAlign: TextAlign.center,
                                         style: Theme.of(context)
                                             .textTheme
@@ -151,15 +151,19 @@ class SplashScreen2 extends StatelessWidget {
                   const Gap(spacing * 3),
                   PrimaryButton(
                     isLoading: false,
-                    onPressed: () => Get.to(const RegisterPage()),
-                    title: 'Buat Akun',
+                    onPressed: () => Get.to(() => const RegisterPage(),
+                        transition: Transition.rightToLeft,
+                        duration: const Duration(milliseconds: 500)),
+                    title: 'Sign Up',
                     type: ButtonType.primary,
                   ),
                   const Gap(spacing * 1.8),
                   PrimaryButton(
                     isLoading: false,
-                    onPressed: () => Get.to(const LoginPage()),
-                    title: 'Masuk',
+                    onPressed: () => Get.to(() => const LoginPage(),
+                        transition: Transition.rightToLeft,
+                        duration: const Duration(milliseconds: 500)),
+                    title: 'Sign In',
                     type: ButtonType.secondary,
                   ),
                 ],

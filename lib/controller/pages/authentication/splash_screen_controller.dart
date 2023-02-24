@@ -13,7 +13,9 @@ class SplashScreenController extends GetxController {
   delayedRedirect() {
     Timer(
       const Duration(seconds: 2),
-      () => Get.to(SplashScreen2()),
+      () => Get.to(() => SplashScreen2(),
+          transition: Transition.fadeIn,
+          duration: const Duration(milliseconds: 500)),
     );
   }
 }

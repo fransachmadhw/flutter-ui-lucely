@@ -1,5 +1,6 @@
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/pages/authentication/login_page.dart';
+import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 import 'package:lucely_app/widgets/input/primary_input.dart';
 import 'package:sizer/sizer.dart';
@@ -35,7 +36,7 @@ class RegisterPage extends StatelessWidget {
                       ),
                       Text("Sign Up",
                           style: Theme.of(context).textTheme.headlineSmall),
-                      Text("Yuk jadi lebih baik bersama Lucely",
+                      Text("Let's be better with Lucely!",
                           style: Theme.of(context).textTheme.bodyLarge),
                     ],
                   ),
@@ -47,14 +48,14 @@ class RegisterPage extends StatelessWidget {
                   ),
                   const Gap(spacing * 3),
                   const PrimaryInput(
-                    label: "Kata Sandi",
-                    placeholder: "Min. 8 Karakter",
+                    label: "Password",
+                    placeholder: "Min. 8 Characters",
                     isPassword: true,
                   ),
                   const Gap(spacing * 3),
                   const PrimaryInput(
-                    label: "Konfirmasi Kata Sandi",
-                    placeholder: "Min. 8 Karakter",
+                    label: "Retype your password",
+                    placeholder: "Min. 8 Characters",
                     isPassword: true,
                   ),
                   const Gap(spacing * 3),
@@ -78,14 +79,14 @@ class RegisterPage extends StatelessWidget {
                           child: RichText(
                             overflow: TextOverflow.clip,
                             text: TextSpan(
-                                text: "Saya setuju dengan",
+                                text: "I agree with",
                                 style: Theme.of(context).textTheme.bodyMedium,
                                 children: const [
                                   TextSpan(
                                     text: " Terms of Service",
                                     style: TextStyle(color: blue),
                                   ),
-                                  TextSpan(text: " dan"),
+                                  TextSpan(text: " and"),
                                   TextSpan(
                                     text: " Privacy Policy",
                                     style: TextStyle(color: blue),
@@ -98,8 +99,10 @@ class RegisterPage extends StatelessWidget {
                   ),
                   const Gap(spacing * 4),
                   PrimaryButton(
-                    onPressed: () {},
-                    title: "Buat Akun",
+                    onPressed: () => Get.to(() => const MainApp(),
+                        transition: Transition.fadeIn,
+                        duration: const Duration(milliseconds: 500)),
+                    title: "Sign Up",
                     type: ButtonType.primary,
                     isLoading: false,
                   ),
@@ -108,14 +111,16 @@ class RegisterPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Sudah mempunyai akun?",
+                        "Already have an account?",
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const Gap(spacing / 2),
                       InkWell(
-                        onTap: () => Get.to(() => const LoginPage()),
+                        onTap: () => Get.to(() => const LoginPage(),
+                            transition: Transition.downToUp,
+                            duration: const Duration(milliseconds: 500)),
                         child: Text(
-                          "Masuk",
+                          "Sign In",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!

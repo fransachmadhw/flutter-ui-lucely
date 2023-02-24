@@ -44,7 +44,7 @@ class CounselingPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(radius * 5)),
                     ),
                     Gap(spacing * 3),
-                    Text("Pilih topik konseling",
+                    Text("Choose counseling topic",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -59,7 +59,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -83,7 +86,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Kecemasan",
+                              child: Text("Anxiety",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -95,7 +98,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -119,7 +125,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Depresi",
+                              child: Text("Depression",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -138,7 +144,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -162,7 +171,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Kesepian",
+                              child: Text("Lonely",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -174,7 +183,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -217,7 +229,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -241,7 +256,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Trauma",
+                              child: Text("Traumatic",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -253,7 +268,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -277,86 +295,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Sosial",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: 12))),
-                        ),
-                      ],
-                    ),
-                    Gap(spacing * 2),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      // crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
-                          child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
-                              style: ButtonStyle(
-                                elevation: MaterialStateProperty.all(0),
-                                backgroundColor:
-                                    MaterialStateProperty.resolveWith<Color>(
-                                  (Set<MaterialState> states) {
-                                    if (states
-                                        .contains(MaterialState.pressed)) {
-                                      return columbiaBlue;
-                                    }
-                                    return white;
-                                  },
-                                ),
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(radius * 1),
-                                    side: const BorderSide(
-                                      width: 1,
-                                      color: blue,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              child: Text("Kepribadian",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleMedium!
-                                      .copyWith(
-                                          fontWeight: FontWeight.normal,
-                                          fontSize: 12))),
-                        ),
-                        ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
-                          child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
-                              style: ButtonStyle(
-                                elevation: MaterialStateProperty.all(0),
-                                backgroundColor:
-                                    MaterialStateProperty.resolveWith<Color>(
-                                  (Set<MaterialState> states) {
-                                    if (states
-                                        .contains(MaterialState.pressed)) {
-                                      return columbiaBlue;
-                                    }
-                                    return white;
-                                  },
-                                ),
-                                shape: MaterialStateProperty.all(
-                                  RoundedRectangleBorder(
-                                    borderRadius:
-                                        BorderRadius.circular(radius * 1),
-                                    side: const BorderSide(
-                                      width: 1,
-                                      color: blue,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              child: Text("Keluarga",
+                              child: Text("Social",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -375,7 +314,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -399,7 +341,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Emosional",
+                              child: Text("Personality",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -411,7 +353,10 @@ class CounselingPage extends StatelessWidget {
                           constraints: const BoxConstraints.tightFor(
                               width: 123, height: 40),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChoosePsychologist()),
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -435,7 +380,92 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Percintaan",
+                              child: Text("Family",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 12))),
+                        ),
+                      ],
+                    ),
+                    Gap(spacing * 2),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        ConstrainedBox(
+                          constraints: const BoxConstraints.tightFor(
+                              width: 123, height: 40),
+                          child: ElevatedButton(
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
+                              style: ButtonStyle(
+                                elevation: MaterialStateProperty.all(0),
+                                backgroundColor:
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(radius * 1),
+                                    side: const BorderSide(
+                                      width: 1,
+                                      color: blue,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              child: Text("Emotional",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleMedium!
+                                      .copyWith(
+                                          fontWeight: FontWeight.normal,
+                                          fontSize: 12))),
+                        ),
+                        ConstrainedBox(
+                          constraints: const BoxConstraints.tightFor(
+                              width: 123, height: 40),
+                          child: ElevatedButton(
+                              onPressed: () => Get.to(
+                                  () => const ChoosePsychologist(),
+                                  transition: Transition.rightToLeft,
+                                  duration: const Duration(milliseconds: 700)),
+                              style: ButtonStyle(
+                                elevation: MaterialStateProperty.all(0),
+                                backgroundColor:
+                                    MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                    if (states
+                                        .contains(MaterialState.pressed)) {
+                                      return columbiaBlue;
+                                    }
+                                    return white;
+                                  },
+                                ),
+                                shape: MaterialStateProperty.all(
+                                  RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(radius * 1),
+                                    side: const BorderSide(
+                                      width: 1,
+                                      color: blue,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              child: Text("Romantic",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -476,7 +506,7 @@ class CounselingPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(radius * 5)),
                     ),
                     Gap(spacing * 3),
-                    Text("Pilih topik konseling",
+                    Text("Choose counseling topic",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -535,7 +565,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Pengembangan Diri",
+                              child: Text("Self Development",
                                   maxLines: 2,
                                   textAlign: TextAlign.center,
                                   style: Theme.of(context)
@@ -572,7 +602,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Pendidikan",
+                              child: Text("Education",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -600,7 +630,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Wawancara",
+                              child: Text("Interview",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -663,7 +693,7 @@ class CounselingPage extends StatelessWidget {
                                   ),
                                 ),
                               ),
-                              child: Text("Manajemen Hidup",
+                              child: Text("Life Management",
                                   maxLines: 2,
                                   textAlign: TextAlign.center,
                                   style: Theme.of(context)
@@ -756,7 +786,7 @@ class CounselingPage extends StatelessWidget {
             elevation: 0,
             automaticallyImplyLeading: false,
             centerTitle: true,
-            title: Text("Pilih yang tepat untukmu",
+            title: Text("Choose the right option for you",
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
@@ -769,12 +799,12 @@ class CounselingPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Text("Temukan konselor yang tepat, yuk!",
+                  Text("Find the right expert",
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium!
                           .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
-                  Text("Diskusi langsung sekaligus bedah kasus bareng ahlinya",
+                  Text("Discuss immediately with the experts",
                       maxLines: 2,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                           fontWeight: FontWeight.normal, fontSize: 14)),
@@ -827,7 +857,7 @@ class CounselingPage extends StatelessWidget {
                                     SizedBox(
                                       width: 200,
                                       child: Text(
-                                          "Kesehatan mentalmu adalah prioritas utama",
+                                          "Your mental health is your priority",
                                           maxLines: 3,
                                           style: Theme.of(context)
                                               .textTheme
@@ -894,7 +924,7 @@ class CounselingPage extends StatelessWidget {
                                     SizedBox(
                                       width: 200,
                                       child: Text(
-                                          "Jadi versi terbaik dirimu dan sukses meraih impian",
+                                          "Be the best of you and reach your dream",
                                           maxLines: 3,
                                           style: Theme.of(context)
                                               .textTheme

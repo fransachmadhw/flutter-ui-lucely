@@ -62,7 +62,7 @@ class MainApp extends StatelessWidget {
                       width: spacing * 3,
                     ),
                   ),
-                  label: "Konseling"),
+                  label: "Counseling"),
               BottomNavigationBarItem(
                   icon: Padding(
                     padding: const EdgeInsets.only(bottom: spacing / 2),
@@ -86,7 +86,7 @@ class MainApp extends StatelessWidget {
                       width: spacing * 3,
                     ),
                   ),
-                  label: "Akun"),
+                  label: "Account"),
             ],
             onTap: (index) => controller.setPageIndex(index),
           ),

@@ -32,7 +32,7 @@ class AccountPage extends StatelessWidget {
             elevation: 0,
             automaticallyImplyLeading: false,
             centerTitle: true,
-            title: Text("Akun",
+            title: Text("Account",
                 style: Theme.of(context)
                     .textTheme
                     .titleMedium!
@@ -120,7 +120,7 @@ class AccountPage extends StatelessWidget {
                                 width: spacing * 3,
                               ),
                               Gap(spacing * 2),
-                              Text("Edit Akun",
+                              Text("Edit Account",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -166,7 +166,7 @@ class AccountPage extends StatelessWidget {
                                 width: spacing * 3,
                               ),
                               Gap(spacing * 2),
-                              Text("FAQ dan Bantuan",
+                              Text("FAQ and Help",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -212,7 +212,7 @@ class AccountPage extends StatelessWidget {
                                 width: spacing * 3,
                               ),
                               Gap(spacing * 2),
-                              Text("Kontak Admin",
+                              Text("Contact Admin",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!
@@ -258,7 +258,7 @@ class AccountPage extends StatelessWidget {
                                 width: spacing * 3,
                               ),
                               Gap(spacing * 2),
-                              Text("Keluar",
+                              Text("Sign Out",
                                   style: Theme.of(context)
                                       .textTheme
                                       .titleMedium!

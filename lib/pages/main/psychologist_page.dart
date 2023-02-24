@@ -50,7 +50,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                           borderRadius: BorderRadius.circular(radius * 5)),
                     ),
                     Gap(spacing * 5),
-                    Text("Paket apa yang ingin kamu pilih\nuntuk konseling?",
+                    Text("Which option suits best for you?",
                         maxLines: 2,
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
@@ -131,7 +131,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Detail Psikolog",
+        title: Text("Psychologist Detail",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -172,7 +172,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                     SizedBox(
                       width: 210,
                       child: Text(
-                          "Kepribadian, Kecemasan, Trauma, Pengembangan Diri, +3 lainnya",
+                          "Personality, Anxiety, Traumatic, Self Development, +3 others",
                           maxLines: 5,
                           textAlign: TextAlign.center,
                           style: Theme.of(context)
@@ -202,7 +202,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Profil ${widget.psychologistModel.name}",
+                    Text("Profile ${widget.psychologistModel.name}",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -226,7 +226,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 fontSize: 14,
                                 height: 1.5)),
                     Gap(spacing * 4),
-                    Text("Jadwal Terdekat",
+                    Text("Nearest Schedule",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -250,7 +250,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                   fontWeight: FontWeight.w700,
                                   fontSize: 14,
                                 )),
-                        Text("Sabtu, 8 0kt 2023 | 19:00 WIB",
+                        Text("Oct 8, 2023 | 7:00 pm",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
@@ -270,7 +270,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                   fontWeight: FontWeight.w700,
                                   fontSize: 14,
                                 )),
-                        Text("Minggu, 9 0kt 2023 | 19:00 WIB",
+                        Text("Oct 9, 2023 | 7:00 pm",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
@@ -281,7 +281,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                       ],
                     ),
                     Gap(spacing * 4),
-                    Text("Review Psikolog ${widget.psychologistModel.name}",
+                    Text("Review ${widget.psychologistModel.name}",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -332,7 +332,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                 children: [
                   PrimaryButton(
                       onPressed: () => openModal(),
-                      title: "Pilih Konselor",
+                      title: "Choose Psychologist",
                       type: ButtonType.primary,
                       isLoading: false)
                 ],

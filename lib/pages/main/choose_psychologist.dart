@@ -50,7 +50,7 @@ class ChoosePsychologist extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Psikolog Pilihan",
+        title: Text("Choose your psychologist",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -64,7 +64,7 @@ class ChoosePsychologist extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               RoundedSearchInput(
-                placeholder: "Cari psikolog",
+                placeholder: "Search psychologist",
               ),
               Gap(spacing * 3),
               Wrap(
@@ -75,28 +75,23 @@ class ChoosePsychologist extends StatelessWidget {
                     shrinkWrap: true,
                     itemCount: name.length,
                     itemBuilder: (BuildContext context, int index) {
-                      // return Psychologist(
-                      //   name: psychologistData[index].name,
-                      //   image: psychologistData[index].imageUrl,
-                      //   onPressed: () =>
-                      //       Navigator.of(context).push(MaterialPageRoute(
-                      //           builder: (context) => PsychologistPage(
-                      //                 psychologistModel:
-                      //                     psychologistData[index],
-                      //               ))),
-                      // );
                       return ElevatedButton(
-                        onPressed: () =>
-                            // Navigator.of(context).push(MaterialPageRoute(
-                            //     builder: (context) => PsychologistPage(
-                            //           psychologistModel:
-                            //               psychologistData[index],
-                            //         ))),
-                            Get.to(() => PsychologistPage(
-                                psychologistModel: psychologistData[index])),
+                        onPressed: () => Get.to(
+                            () => PsychologistPage(
+                                psychologistModel: psychologistData[index]),
+                            transition: Transition.zoom,
+                            duration: const Duration(milliseconds: 500)),
                         style: ButtonStyle(
                           elevation: MaterialStateProperty.all(0),
-                          backgroundColor: MaterialStateProperty.all(white),
+                          backgroundColor:
+                              MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                              if (states.contains(MaterialState.pressed)) {
+                                return columbiaBlue;
+                              }
+                              return white;
+                            },
+                          ),
                           shape: MaterialStateProperty.all(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(radius * 2),

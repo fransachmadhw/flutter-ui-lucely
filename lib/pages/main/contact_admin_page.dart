@@ -25,7 +25,7 @@ class ContactAdmin extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Kontak Admin",
+        title: Text("Contact Admin",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -51,14 +51,14 @@ class ContactAdmin extends StatelessWidget {
                   ),
                 ],
               ),
-              Text("JAM KERJA : 08.00 - 17.00 WIB",
+              Text("WORK HOURS: 8:00 am - 17:00 pm",
                   // textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium!
                       .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
               Gap(spacing * 3),
-              Text("Silahkan menghubungi kami melalui",
+              Text("Please contact us from",
                   // textAlign: TextAlign.center,
                   style: Theme.of(context)
                       .textTheme

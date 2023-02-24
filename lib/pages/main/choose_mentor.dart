@@ -26,7 +26,7 @@ class ChooseMentor extends StatelessWidget {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Mentor Pilihan",
+        title: Text("Choose your mentor",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!

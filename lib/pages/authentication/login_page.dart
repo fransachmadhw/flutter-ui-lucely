@@ -34,7 +34,7 @@ class LoginPage extends StatelessWidget {
                         height: spacing * 10, // 80
                         child: Image.asset('assets/images/lucely-logo.png'),
                       ),
-                      Text("Login",
+                      Text("Sign In",
                           style: Theme.of(context).textTheme.headlineSmall),
                       Text("Yuk jadi lebih baik bersama Lucely",
                           style: Theme.of(context).textTheme.bodyLarge),
@@ -80,7 +80,7 @@ class LoginPage extends StatelessWidget {
                       InkWell(
                         onTap: () {},
                         child: Text(
-                          "Lupa Kata Sandi?",
+                          "Forgot password?",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
@@ -91,8 +91,10 @@ class LoginPage extends StatelessWidget {
                   ),
                   const Gap(spacing * 4),
                   PrimaryButton(
-                    onPressed: () => Get.off(() => const MainApp()),
-                    title: "Login",
+                    onPressed: () => Get.off(() => const MainApp(),
+                        transition: Transition.fadeIn,
+                        duration: const Duration(milliseconds: 500)),
+                    title: "Sign In",
                     type: ButtonType.primary,
                     isLoading: false,
                   ),
@@ -101,14 +103,16 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Belum mempunyai akun?",
+                        "Don't have an account?",
                         style: Theme.of(context).textTheme.bodyMedium,
                       ),
                       const Gap(spacing / 2),
                       InkWell(
-                        onTap: () => Get.to(() => const RegisterPage()),
+                        onTap: () => Get.to(() => const RegisterPage(),
+                            transition: Transition.downToUp,
+                            duration: const Duration(milliseconds: 500)),
                         child: Text(
-                          "Buat Akun",
+                          "Register here",
                           style: Theme.of(context)
                               .textTheme
                               .bodyMedium!
