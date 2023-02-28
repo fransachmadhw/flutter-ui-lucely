@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/pages/authentication/register_page.dart';
 import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:sizer/sizer.dart';
@@ -15,9 +16,12 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
+
     return GetX<LoginPageController>(
       init: LoginPageController(),
       builder: (controller) => Scaffold(
+        backgroundColor: white,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Container(
@@ -31,13 +35,21 @@ class LoginPage extends StatelessWidget {
                     spacing: spacing * 2,
                     children: [
                       SizedBox(
-                        height: spacing * 10, // 80
+                        height: FontSize.blockSizeVertical! * 10,
                         child: Image.asset('assets/images/lucely-logo.png'),
                       ),
                       Text("Sign In",
-                          style: Theme.of(context).textTheme.headlineSmall),
-                      Text("Yuk jadi lebih baik bersama Lucely",
-                          style: Theme.of(context).textTheme.bodyLarge),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                  fontSize: FontSize.blockSizeHorizontal! * 7)),
+                      Text("Be better with Lucely",
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  fontSize: FontSize.blockSizeHorizontal! * 4)),
                     ],
                   ),
                   const Gap(spacing * 5),
@@ -48,8 +60,8 @@ class LoginPage extends StatelessWidget {
                   ),
                   const Gap(spacing * 3),
                   const PrimaryInput(
-                    label: "Kata Sandi",
-                    placeholder: "Min. 8 Karakter",
+                    label: "Password",
+                    placeholder: "Min. 8 Characters",
                     isPassword: true,
                   ),
                   const Gap(spacing * 3),
@@ -72,7 +84,7 @@ class LoginPage extends StatelessWidget {
                             ),
                           ),
                           Text(
-                            "Ingat Saya",
+                            "Remember Me",
                             style: Theme.of(context).textTheme.bodyMedium,
                           ),
                         ],

@@ -83,7 +83,7 @@ class Psychologist extends StatelessWidget {
                       SizedBox(
                         width: 200,
                         child: Text(
-                            "Kepribadian, Kecemasan, Trauma, Pengembangan Diri, +3 lainnya",
+                            "Personality, Anxiety, Traumatic, Self Development, +3 others",
                             maxLines: 3,
                             style: Theme.of(context)
                                 .textTheme
@@ -112,14 +112,14 @@ class Psychologist extends StatelessWidget {
                         },
                       ),
                       Gap(spacing * 1),
-                      Text("Jadwal Terdekat",
+                      Text("Nearest Schedule",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
                               .copyWith(
                                   fontWeight: FontWeight.w700, fontSize: 12)),
                       Gap(spacing * 0.2),
-                      Text("Minggu, 17:00 WIB",
+                      Text("Sunday, 7:00 pm",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
@@ -134,8 +134,14 @@ class Psychologist extends StatelessWidget {
                           onPressed: () {},
                           style: ButtonStyle(
                             elevation: MaterialStateProperty.all(0),
-                            backgroundColor: MaterialStateProperty.all(
-                              blue,
+                            backgroundColor:
+                                MaterialStateProperty.resolveWith<Color>(
+                              (Set<MaterialState> states) {
+                                if (states.contains(MaterialState.pressed)) {
+                                  return columbiaBlue;
+                                }
+                                return blue;
+                              },
                             ),
                             shape: MaterialStateProperty.all(
                               RoundedRectangleBorder(

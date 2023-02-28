@@ -7,25 +7,23 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
-import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
+import 'package:lucely_app/data/mentor_model.dart';
 import 'package:lucely_app/data/psychologist_model.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 import 'package:lucely_app/widgets/card/psychologist_review_card.dart';
 
-class PsychologistPage extends StatefulWidget {
-  final PsychologistModel psychologistModel;
-  const PsychologistPage({super.key, required this.psychologistModel});
+class MentorPage extends StatefulWidget {
+  final MentorModel mentorModel;
+  const MentorPage({super.key, required this.mentorModel});
 
   @override
-  State<StatefulWidget> createState() => _PsychologistPageState();
+  State<StatefulWidget> createState() => _MentorPageState();
 }
 
-class _PsychologistPageState extends State<PsychologistPage> {
+class _MentorPageState extends State<MentorPage> {
   @override
   Widget build(BuildContext context) {
-    FontSize().init(context);
-
     void openModal() {
       showModalBottomSheet(
           enableDrag: true,
@@ -41,7 +39,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: FontSize.blockSizeHorizontal! * 15,
+                      width: 80,
                       height: 5,
                       decoration: BoxDecoration(
                           color: lightGrey,
@@ -68,15 +66,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.resolveWith<Color>(
-                                  (Set<MaterialState> states) {
-                                    if (states
-                                        .contains(MaterialState.pressed)) {
-                                      return columbiaBlue;
-                                    }
-                                    return white;
-                                  },
-                                ),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -89,8 +79,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 ),
                               ),
                               child: Container(
-                                width: FontSize.blockSizeHorizontal! * 32,
-                                height: FontSize.blockSizeVertical! * 17,
+                                width: 120,
+                                height: 140,
                                 child: Column(
                                   crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
@@ -194,15 +184,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
-                                    MaterialStateProperty.resolveWith<Color>(
-                                  (Set<MaterialState> states) {
-                                    if (states
-                                        .contains(MaterialState.pressed)) {
-                                      return columbiaBlue;
-                                    }
-                                    return white;
-                                  },
-                                ),
+                                    MaterialStateProperty.all(white),
                                 shape: MaterialStateProperty.all(
                                   RoundedRectangleBorder(
                                     borderRadius:
@@ -215,8 +197,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 ),
                               ),
                               child: Container(
-                                width: FontSize.blockSizeHorizontal! * 32,
-                                height: FontSize.blockSizeVertical! * 17,
+                                width: 120,
+                                height: 140,
                                 child: Column(
                                   crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
@@ -335,7 +317,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
-        title: Text("Psychologist Detail",
+        title: Text("Mentor Detail",
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!
@@ -360,13 +342,13 @@ class _PsychologistPageState extends State<PsychologistPage> {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
                         image: DecorationImage(
-                          image: AssetImage(widget.psychologistModel.imageUrl),
+                          image: AssetImage(widget.mentorModel.imageUrl),
                           fit: BoxFit.cover,
                         ),
                       ),
                     ),
                     Gap(spacing * 2),
-                    Text(widget.psychologistModel.name,
+                    Text(widget.mentorModel.name,
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -376,7 +358,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                     SizedBox(
                       width: 210,
                       child: Text(
-                          "Personality, Anxiety, Traumatic, Self Development, +3 others",
+                          "Career Path, Self Development, Education, Interview, Productivity, +3 others",
                           maxLines: 5,
                           textAlign: TextAlign.center,
                           style: Theme.of(context)
@@ -388,7 +370,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                   color: darkGrey)),
                     ),
                     Gap(spacing * 1),
-                    Text("SIPP: 13324233",
+                    Text("CEO Lucely App",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -406,7 +388,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Profile ${widget.psychologistModel.name}",
+                    Text("Profile ${widget.mentorModel.name}",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -421,7 +403,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                     ),
                     Gap(spacing),
                     Text(
-                        "${widget.psychologistModel.name} adalah seorang psikolog klinis lulusan Harvard. Beliau memiliki ketertarikan dalam menanggani kasus seperti kecemasan, depresi, pengembangan diri, dan keluarga. Beliau percaya bahwa mengontrol untuk selalu berpikiran positif mampu menjalani hidup dengan baik.",
+                        "${widget.mentorModel.name} adalah seorang lulusan Stanford. Beliau passionate di bidang finance dan management. Beliau percaya bahwa setiap orang memiliki kesempatan yang sama, dan dalam merencanakan karir memerlukan perencanaan yang matang.",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -485,7 +467,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                       ],
                     ),
                     Gap(spacing * 4),
-                    Text("Review ${widget.psychologistModel.name}",
+                    Text("Review ${widget.mentorModel.name}",
                         style: Theme.of(context)
                             .textTheme
                             .titleMedium!
@@ -536,7 +518,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                 children: [
                   PrimaryButton(
                       onPressed: () => openModal(),
-                      title: "Choose Psychologist",
+                      title: "Choose Mentor",
                       type: ButtonType.primary,
                       isLoading: false)
                 ],

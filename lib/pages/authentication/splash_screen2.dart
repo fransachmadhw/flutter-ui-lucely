@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:gap/gap.dart';
@@ -14,9 +15,12 @@ class SplashScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
+
     return GetX<SplashScreen2Controller>(
       init: SplashScreen2Controller(),
       builder: (controller) => Scaffold(
+        backgroundColor: white,
         body: SafeArea(
           child: Center(
             child: Padding(
@@ -46,7 +50,10 @@ class SplashScreen2 extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .headlineSmall!
-                                            .copyWith(fontSize: 20)),
+                                            .copyWith(
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    5)),
                                     const Gap(spacing),
                                     SizedBox(
                                       width: 220,
@@ -56,7 +63,11 @@ class SplashScreen2 extends StatelessWidget {
                                           style: Theme.of(context)
                                               .textTheme
                                               .bodySmall!
-                                              .copyWith(height: 1.5)),
+                                              .copyWith(
+                                                  height: 1.5,
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      3)),
                                     ),
                                   ],
                                 ),
@@ -69,7 +80,10 @@ class SplashScreen2 extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .headlineSmall!
-                                            .copyWith(fontSize: 20)),
+                                            .copyWith(
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    5)),
                                     const Gap(spacing),
                                     SizedBox(
                                       width: 240,
@@ -79,7 +93,11 @@ class SplashScreen2 extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodySmall!
-                                            .copyWith(height: 1.5),
+                                            .copyWith(
+                                                height: 1.5,
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    3),
                                       ),
                                     ),
                                   ],
@@ -93,7 +111,10 @@ class SplashScreen2 extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .headlineSmall!
-                                            .copyWith(fontSize: 20)),
+                                            .copyWith(
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    5)),
                                     const Gap(spacing),
                                     SizedBox(
                                       width: 220,
@@ -103,7 +124,11 @@ class SplashScreen2 extends StatelessWidget {
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodySmall!
-                                            .copyWith(height: 1.5),
+                                            .copyWith(
+                                                height: 1.5,
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    3),
                                       ),
                                     ),
                                   ],
@@ -115,6 +140,7 @@ class SplashScreen2 extends StatelessWidget {
                     options: CarouselOptions(
                         autoPlay: true,
                         enlargeCenterPage: true,
+                        viewportFraction: 1,
                         aspectRatio: 1.0,
                         onPageChanged: (index, reason) =>
                             controller.changeIndex(index)),

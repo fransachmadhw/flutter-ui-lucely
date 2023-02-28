@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/pages/main/choose_mentor.dart';
 import 'package:lucely_app/pages/main/choose_psychologist.dart';
@@ -21,6 +22,8 @@ class CounselingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
+
     void openPsikologDialog() {
       showModalBottomSheet(
           enableDrag: true,
@@ -56,8 +59,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -95,8 +99,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -141,8 +146,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -180,8 +186,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -226,8 +233,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -265,8 +273,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -311,8 +320,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -350,8 +360,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -396,8 +407,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -435,8 +447,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
                                   () => const ChoosePsychologist(),
@@ -518,8 +531,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -546,8 +560,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -583,8 +598,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -611,8 +627,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -646,8 +663,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -674,8 +692,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -711,8 +730,9 @@ class CounselingPage extends StatelessWidget {
                       // crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -741,8 +761,9 @@ class CounselingPage extends StatelessWidget {
                                           fontSize: 12))),
                         ),
                         ConstrainedBox(
-                          constraints: const BoxConstraints.tightFor(
-                              width: 123, height: 40),
+                          constraints: BoxConstraints.tightFor(
+                              width: FontSize.blockSizeHorizontal! * 30,
+                              height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(ChooseMentor()),
                               style: ButtonStyle(
@@ -787,10 +808,9 @@ class CounselingPage extends StatelessWidget {
             automaticallyImplyLeading: false,
             centerTitle: true,
             title: Text("Choose the right option for you",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: FontSize.blockSizeHorizontal! * 4)),
           ),
           body: SafeArea(
               child: SingleChildScrollView(
@@ -800,14 +820,14 @@ class CounselingPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text("Find the right expert",
-                      style: Theme.of(context)
-                          .textTheme
-                          .titleMedium!
-                          .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+                      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          fontWeight: FontWeight.w700,
+                          fontSize: FontSize.blockSizeHorizontal! * 4)),
                   Text("Discuss immediately with the experts",
                       maxLines: 2,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.normal, fontSize: 14)),
+                          fontWeight: FontWeight.normal,
+                          fontSize: FontSize.blockSizeHorizontal! * 3.5)),
                   Gap(spacing * 3),
                   ElevatedButton(
                     onPressed: () => openPsikologDialog(),
@@ -837,22 +857,24 @@ class CounselingPage extends StatelessWidget {
                             children: [
                               Image.asset(
                                 "assets/images/psikolog.png",
-                                width: 100,
+                                width: FontSize.blockSizeHorizontal! * 30,
                                 // height: 90,
                               ),
                               SizedBox(
-                                width: 150,
+                                width: FontSize.blockSizeHorizontal! * 40,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("Psikolog",
+                                    Text("Psychologist",
                                         style: Theme.of(context)
                                             .textTheme
                                             .titleMedium!
                                             .copyWith(
                                                 fontWeight: FontWeight.w700,
-                                                fontSize: 17)),
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    4)),
                                     Gap(spacing * 1),
                                     SizedBox(
                                       width: 200,
@@ -864,7 +886,9 @@ class CounselingPage extends StatelessWidget {
                                               .titleMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.normal,
-                                                  fontSize: 13,
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      3,
                                                   color: darkGrey)),
                                     ),
                                     Gap(spacing * 2),
@@ -904,11 +928,11 @@ class CounselingPage extends StatelessWidget {
                             children: [
                               Image.asset(
                                 "assets/images/mentor.png",
-                                width: 100,
+                                width: FontSize.blockSizeHorizontal! * 30,
                                 // height: 90,
                               ),
                               SizedBox(
-                                width: 150,
+                                width: FontSize.blockSizeHorizontal! * 40,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -919,7 +943,9 @@ class CounselingPage extends StatelessWidget {
                                             .titleMedium!
                                             .copyWith(
                                                 fontWeight: FontWeight.w700,
-                                                fontSize: 17)),
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    4)),
                                     Gap(spacing * 1),
                                     SizedBox(
                                       width: 200,
@@ -931,7 +957,9 @@ class CounselingPage extends StatelessWidget {
                                               .titleMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.normal,
-                                                  fontSize: 13,
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      3,
                                                   color: darkGrey)),
                                     ),
                                     Gap(spacing * 2),

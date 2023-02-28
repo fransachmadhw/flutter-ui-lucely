@@ -29,7 +29,7 @@ class MainApp extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: spacing),
           child: BottomNavigationBar(
             currentIndex: controller.currentPageIndex.value,
-            backgroundColor: Colors.transparent,
+            backgroundColor: white,
             elevation: 0,
             selectedItemColor: blue,
             showUnselectedLabels: true,

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/controller/pages/authentication/splash_screen_controller.dart';
 
@@ -13,6 +14,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: white,
       body: SafeArea(
         child: Center(
           child: SizedBox(

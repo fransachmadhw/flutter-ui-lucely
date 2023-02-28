@@ -8,7 +8,11 @@ import 'package:iconify_flutter/icons/ic.dart';
 import 'package:iconify_flutter/icons/ph.dart';
 import 'package:iconify_flutter/icons/ri.dart';
 import 'package:iconify_flutter/icons/teenyicons.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/controller/pages/authentication/splash_screen2_controller.dart';
+import 'package:lucely_app/pages/main/choose_mentor.dart';
+import 'package:lucely_app/pages/main/choose_psychologist.dart';
+import 'package:lucely_app/pages/main/luceguide_page.dart';
 import 'package:lucely_app/pages/main/notification_page.dart';
 import 'package:lucely_app/widgets/button/bookluce.dart';
 import 'package:lucely_app/widgets/button/event_button.dart';
@@ -19,6 +23,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/sizing.dart';
+import 'package:lucely_app/controller/pages/main/main_app_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -30,6 +35,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    MainAppController pageController = Get.put(MainAppController());
+    FontSize().init(context);
+
     final List<String> imgList = [
       'assets/images/psikolog.png',
       'assets/images/mentor.png',
@@ -76,7 +84,9 @@ class HomePage extends StatelessWidget {
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
-                                    fontWeight: FontWeight.w700, fontSize: 24)),
+                                    fontWeight: FontWeight.w700,
+                                    fontSize:
+                                        FontSize.blockSizeHorizontal! * 6.5)),
                         Gap(spacing * 1),
                         Text(
                             "Tell me what's in your mind and your heart,\nfind the way out of your problem.",
@@ -85,12 +95,15 @@ class HomePage extends StatelessWidget {
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
-                                    fontWeight: FontWeight.w400, fontSize: 14))
+                                    fontWeight: FontWeight.w400,
+                                    fontSize:
+                                        FontSize.blockSizeHorizontal! * 3.5))
                       ],
                     ),
                   ),
                   Container(
-                      margin: EdgeInsets.only(top: 210),
+                      margin: EdgeInsets.only(
+                          top: FontSize.blockSizeVertical! * 24),
                       // height: 250,
                       width: MediaQuery.of(context).size.width,
                       decoration: BoxDecoration(
@@ -106,7 +119,8 @@ class HomePage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               FeatureButton(
-                                onPressed: () {},
+                                onPressed: () =>
+                                    {pageController.setPageIndex(1)},
                                 image: "assets/images/Counseling.png",
                                 label: "Counseling",
                               ),
@@ -116,7 +130,10 @@ class HomePage extends StatelessWidget {
                                 label: "Event",
                               ),
                               FeatureButton(
-                                onPressed: () {},
+                                onPressed: () => Get.to(() => LuceGuidePage(),
+                                    transition: Transition.rightToLeft,
+                                    duration:
+                                        const Duration(milliseconds: 500)),
                                 image: "assets/images/LuceGuide.png",
                                 label: "LuceGuide",
                               ),
@@ -176,14 +193,27 @@ class HomePage extends StatelessWidget {
                                             ),
                                             Gap(spacing),
                                             ElevatedButton(
-                                              onPressed: () {},
+                                              onPressed: () => Get.to(
+                                                  () => ChoosePsychologist(),
+                                                  transition:
+                                                      Transition.rightToLeft,
+                                                  duration: const Duration(
+                                                      milliseconds: 500)),
                                               style: ButtonStyle(
                                                 elevation:
                                                     MaterialStateProperty.all(
                                                         0),
                                                 backgroundColor:
-                                                    MaterialStateProperty.all(
-                                                  blue,
+                                                    MaterialStateProperty
+                                                        .resolveWith<Color>(
+                                                  (Set<MaterialState> states) {
+                                                    if (states.contains(
+                                                        MaterialState
+                                                            .pressed)) {
+                                                      return columbiaBlue;
+                                                    }
+                                                    return blue;
+                                                  },
                                                 ),
                                                 padding:
                                                     MaterialStateProperty.all(
@@ -202,7 +232,7 @@ class HomePage extends StatelessWidget {
                                               ),
                                               child: Center(
                                                   child: Text(
-                                                      "Konseling dengan Psikolog",
+                                                      "Counseling with Psychologists",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .titleMedium!
@@ -220,8 +250,6 @@ class HomePage extends StatelessWidget {
                                           height: 80,
                                           child: Image.asset(
                                             'assets/images/psikolog2.png',
-                                            // width: 90,
-                                            // height: 90,
                                           ),
                                         )
                                       ],
@@ -272,14 +300,27 @@ class HomePage extends StatelessWidget {
                                             ),
                                             Gap(spacing),
                                             ElevatedButton(
-                                              onPressed: () {},
+                                              onPressed: () => Get.to(
+                                                  () => ChooseMentor(),
+                                                  transition:
+                                                      Transition.rightToLeft,
+                                                  duration: const Duration(
+                                                      milliseconds: 500)),
                                               style: ButtonStyle(
                                                 elevation:
                                                     MaterialStateProperty.all(
                                                         0),
                                                 backgroundColor:
-                                                    MaterialStateProperty.all(
-                                                  blue,
+                                                    MaterialStateProperty
+                                                        .resolveWith<Color>(
+                                                  (Set<MaterialState> states) {
+                                                    if (states.contains(
+                                                        MaterialState
+                                                            .pressed)) {
+                                                      return columbiaBlue;
+                                                    }
+                                                    return blue;
+                                                  },
                                                 ),
                                                 padding:
                                                     MaterialStateProperty.all(
@@ -298,7 +339,7 @@ class HomePage extends StatelessWidget {
                                               ),
                                               child: Center(
                                                   child: Text(
-                                                      "Counseling with mentors",
+                                                      "Counseling with Mentors",
                                                       style: Theme.of(context)
                                                           .textTheme
                                                           .titleMedium!
@@ -316,8 +357,6 @@ class HomePage extends StatelessWidget {
                                           height: 80,
                                           child: Image.asset(
                                             'assets/images/mentor2.png',
-                                            // width: 90,
-                                            // height: 90,
                                           ),
                                         )
                                       ],
@@ -347,7 +386,9 @@ class HomePage extends StatelessWidget {
                                               .bodyMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 18)),
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      4.2)),
                                       Text(
                                           "Read the summary of best-selling books",
                                           style: Theme.of(context)
@@ -355,7 +396,9 @@ class HomePage extends StatelessWidget {
                                               .bodyMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.normal,
-                                                  fontSize: 12))
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      3))
                                     ],
                                   ),
                                 ),
@@ -367,13 +410,16 @@ class HomePage extends StatelessWidget {
                                           .bodyMedium!
                                           .copyWith(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 12)),
+                                              fontSize: FontSize
+                                                      .blockSizeHorizontal! *
+                                                  3)),
                                 )
                               ],
                             ),
                           ),
+                          Gap(spacing * 0),
                           SizedBox(
-                            height: 194,
+                            height: FontSize.blockSizeVertical! * 30,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
@@ -422,14 +468,18 @@ class HomePage extends StatelessWidget {
                                             .bodyMedium!
                                             .copyWith(
                                                 fontWeight: FontWeight.bold,
-                                                fontSize: 18)),
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    4.2)),
                                     Text("Discuss together with the experts",
                                         style: Theme.of(context)
                                             .textTheme
                                             .bodyMedium!
                                             .copyWith(
                                                 fontWeight: FontWeight.normal,
-                                                fontSize: 12))
+                                                fontSize: FontSize
+                                                        .blockSizeHorizontal! *
+                                                    3))
                                   ],
                                 ),
                                 InkWell(
@@ -440,7 +490,9 @@ class HomePage extends StatelessWidget {
                                           .bodyMedium!
                                           .copyWith(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 12)),
+                                              fontSize: FontSize
+                                                      .blockSizeHorizontal! *
+                                                  3)),
                                 )
                               ],
                             ),
@@ -495,7 +547,9 @@ class HomePage extends StatelessWidget {
                                               .bodyMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.bold,
-                                                  fontSize: 18)),
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      4.2)),
                                       Text(
                                           "Listen to inspiration which can make your mental healthier",
                                           style: Theme.of(context)
@@ -503,25 +557,33 @@ class HomePage extends StatelessWidget {
                                               .bodyMedium!
                                               .copyWith(
                                                   fontWeight: FontWeight.normal,
-                                                  fontSize: 12))
+                                                  fontSize: FontSize
+                                                          .blockSizeHorizontal! *
+                                                      3))
                                     ],
                                   ),
                                 ),
                                 InkWell(
-                                  onTap: () {},
+                                  highlightColor: columbiaBlue.withOpacity(0.5),
+                                  onTap: () => Get.to(() => LuceGuidePage(),
+                                      transition: Transition.rightToLeft,
+                                      duration:
+                                          const Duration(milliseconds: 500)),
                                   child: Text("See more",
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyMedium!
                                           .copyWith(
                                               fontWeight: FontWeight.bold,
-                                              fontSize: 12)),
+                                              fontSize: FontSize
+                                                      .blockSizeHorizontal! *
+                                                  3)),
                                 )
                               ],
                             ),
                           ),
                           SizedBox(
-                            height: 125,
+                            height: FontSize.blockSizeVertical! * 15,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
@@ -529,18 +591,26 @@ class HomePage extends StatelessWidget {
                                 Gap(spacing * 3),
                                 LuceGuideButton(
                                   onPressed: () {},
-                                  image: 'assets/images/Anxiety.png',
-                                  title: "Overcome a lonely",
-                                  total: "6 sesi singkat",
+                                  image: 'assets/images/lonely.png',
+                                  title: "Overcome Lonely",
+                                  total: "5 sessions",
                                   background: lemonChiffon,
                                 ),
                                 Gap(spacing * 2),
                                 LuceGuideButton(
                                   onPressed: () {},
-                                  image: 'assets/images/demotivation.png',
-                                  title: "Overcome a demotivation",
-                                  total: "6 sesi singkat",
+                                  image: 'assets/images/mind-management.png',
+                                  title: "Mind Management Building",
+                                  total: "5 sessions",
                                   background: pigPink,
+                                ),
+                                Gap(spacing * 2),
+                                LuceGuideButton(
+                                  onPressed: () {},
+                                  image: 'assets/images/demotivation.png',
+                                  title: "Overcome Demotivation",
+                                  total: "5 sessions",
+                                  background: columbiaBlue,
                                 ),
                                 Gap(spacing * 3),
                               ],
@@ -552,7 +622,8 @@ class HomePage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.all(spacing * 3),
                     child: Card(
-                        margin: EdgeInsets.only(top: 140),
+                        margin: EdgeInsets.only(
+                            top: FontSize.blockSizeVertical! * 16),
                         color: white,
                         elevation: 3,
                         shadowColor: black,

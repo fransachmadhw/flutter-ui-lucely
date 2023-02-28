@@ -4,14 +4,10 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/psychologist_model.dart';
-// import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:lucely_app/pages/main/psychologist_page.dart';
-import 'package:lucely_app/widgets/button/counseling_button.dart';
-// import 'package:lucely_app/widgets/button/psychologist.dart';
-// import 'package:lucely_app/widgets/card/counseling_card.dart';
-// import 'package:lucely_app/widgets/dialog/success_dialog.dart';
 import 'package:lucely_app/widgets/input/rounded_search_input.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
@@ -20,6 +16,8 @@ class ChoosePsychologist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
+
     final List<String> name = <String>[
       "Nadine Wastuti",
       "Paulin Agustina",
@@ -51,10 +49,9 @@ class ChoosePsychologist extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Choose your psychologist",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -79,7 +76,7 @@ class ChoosePsychologist extends StatelessWidget {
                         onPressed: () => Get.to(
                             () => PsychologistPage(
                                 psychologistModel: psychologistData[index]),
-                            transition: Transition.zoom,
+                            transition: Transition.rightToLeftWithFade,
                             duration: const Duration(milliseconds: 500)),
                         style: ButtonStyle(
                           elevation: MaterialStateProperty.all(0),
@@ -114,8 +111,8 @@ class ChoosePsychologist extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    height: 160.0,
-                                    width: 100,
+                                    height: FontSize.blockSizeVertical! * 20,
+                                    width: FontSize.blockSizeHorizontal! * 30,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       image: DecorationImage(
@@ -125,9 +122,9 @@ class ChoosePsychologist extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  Gap(spacing * 2),
+                                  Gap(spacing * 2.5),
                                   SizedBox(
-                                    width: 150,
+                                    width: FontSize.blockSizeHorizontal! * 32,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.stretch,
@@ -140,7 +137,9 @@ class ChoosePsychologist extends StatelessWidget {
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight: FontWeight.w700,
-                                                    fontSize: 16)),
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        4)),
                                         Text("SIPP: 13324233",
                                             style: Theme.of(context)
                                                 .textTheme
@@ -148,12 +147,15 @@ class ChoosePsychologist extends StatelessWidget {
                                                 .copyWith(
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontSize: 11)),
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        2.5)),
                                         Gap(spacing * 1),
                                         SizedBox(
-                                          width: 200,
+                                          width: FontSize.blockSizeHorizontal! *
+                                              28,
                                           child: Text(
-                                              "Kepribadian, Kecemasan, Trauma, Pengembangan Diri, +3 lainnya",
+                                              "Personality, Anxiety, Traumatic, Self Development, +3 others",
                                               maxLines: 3,
                                               style: Theme.of(context)
                                                   .textTheme
@@ -161,13 +163,16 @@ class ChoosePsychologist extends StatelessWidget {
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.normal,
-                                                      fontSize: 11,
+                                                      fontSize: FontSize
+                                                              .blockSizeHorizontal! *
+                                                          2.5,
                                                       color: darkGrey)),
                                         ),
                                         Gap(spacing * 1),
                                         RatingBar.builder(
                                           ignoreGestures: true,
-                                          itemSize: 16,
+                                          itemSize:
+                                              FontSize.blockSizeHorizontal! * 4,
                                           initialRating: 5,
                                           minRating: 1,
                                           direction: Axis.horizontal,
@@ -184,22 +189,26 @@ class ChoosePsychologist extends StatelessWidget {
                                           },
                                         ),
                                         Gap(spacing * 1),
-                                        Text("Jadwal Terdekat",
+                                        Text("Nearest Schedule",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight: FontWeight.w700,
-                                                    fontSize: 12)),
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        3)),
                                         Gap(spacing * 0.2),
-                                        Text("Minggu, 17:00 WIB",
+                                        Text("Sunday, 7:00 pm",
                                             style: Theme.of(context)
                                                 .textTheme
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontSize: 11,
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        2.5,
                                                     color: darkGrey)),
                                         Gap(spacing * 1),
                                         ConstrainedBox(
@@ -207,11 +216,15 @@ class ChoosePsychologist extends StatelessWidget {
                                               const BoxConstraints.tightFor(
                                                   height: 30),
                                           child: ElevatedButton(
-                                            onPressed: () => Get.to(() =>
-                                                PsychologistPage(
+                                            onPressed: () => Get.to(
+                                                () => PsychologistPage(
                                                     psychologistModel:
                                                         psychologistData[
-                                                            index])),
+                                                            index]),
+                                                transition: Transition
+                                                    .rightToLeftWithFade,
+                                                duration: const Duration(
+                                                    milliseconds: 500)),
                                             style: ButtonStyle(
                                               elevation:
                                                   MaterialStateProperty.all(0),
@@ -228,7 +241,7 @@ class ChoosePsychologist extends StatelessWidget {
                                               ),
                                             ),
                                             child: Center(
-                                                child: Text("Pilih",
+                                                child: Text("Choose",
                                                     style: Theme.of(context)
                                                         .textTheme
                                                         .titleMedium!
@@ -248,7 +261,7 @@ class ChoosePsychologist extends StatelessWidget {
                       );
                     },
                     separatorBuilder: (BuildContext context, int index) =>
-                        const Divider(),
+                        const Divider(color: Colors.transparent),
                   )
                 ],
               )

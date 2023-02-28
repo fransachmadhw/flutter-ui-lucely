@@ -25,8 +25,13 @@ class FeatureButton extends StatelessWidget {
               onPressed: () => onPressed(),
               style: ButtonStyle(
                 elevation: MaterialStateProperty.all(0),
-                backgroundColor: MaterialStateProperty.all(
-                  Colors.transparent,
+                backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.pressed)) {
+                      return columbiaBlue;
+                    }
+                    return white;
+                  },
                 ),
                 padding: MaterialStateProperty.all(
                   const EdgeInsets.all(spacing * 1.3),

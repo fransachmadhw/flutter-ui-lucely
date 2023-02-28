@@ -1,4 +1,5 @@
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/pages/authentication/login_page.dart';
 import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
@@ -15,9 +16,12 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
+
     return GetX<RegisterPageController>(
       init: RegisterPageController(),
       builder: (controller) => Scaffold(
+        backgroundColor: white,
         body: SafeArea(
           child: SingleChildScrollView(
             child: Container(
@@ -28,16 +32,24 @@ class RegisterPage extends StatelessWidget {
                   Gap(5.w), // 10% of screen height
                   Wrap(
                     direction: Axis.vertical,
-                    spacing: spacing * 2,
+                    spacing: spacing * 1.5,
                     children: [
                       SizedBox(
-                        height: spacing * 10, // 80
+                        height: FontSize.blockSizeVertical! * 10,
                         child: Image.asset('assets/images/lucely-logo.png'),
                       ),
                       Text("Sign Up",
-                          style: Theme.of(context).textTheme.headlineSmall),
+                          style: Theme.of(context)
+                              .textTheme
+                              .headlineSmall!
+                              .copyWith(
+                                  fontSize: FontSize.blockSizeHorizontal! * 7)),
                       Text("Let's be better with Lucely!",
-                          style: Theme.of(context).textTheme.bodyLarge),
+                          style: Theme.of(context)
+                              .textTheme
+                              .bodyLarge!
+                              .copyWith(
+                                  fontSize: FontSize.blockSizeHorizontal! * 4)),
                     ],
                   ),
                   const Gap(spacing * 5),
@@ -61,7 +73,7 @@ class RegisterPage extends StatelessWidget {
                   const Gap(spacing * 3),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SizedBox(
                         width: spacing * 3,

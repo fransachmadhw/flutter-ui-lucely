@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:gap/gap.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 
 class Bookluce extends StatelessWidget {
@@ -19,28 +20,28 @@ class Bookluce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return InkWell(
       onTap: () => onPressed(),
       child: Column(
         children: [
           Container(
-            width: 90,
-            height: 144,
+            width: FontSize.blockSizeHorizontal! * 27,
+            height: FontSize.blockSizeVertical! * 22,
             child: Image.asset(image),
           ),
           Gap(spacing),
           Text(title,
               textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(fontWeight: FontWeight.bold, fontSize: 12)),
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  fontSize: FontSize.blockSizeHorizontal! * 3.5)),
+          Gap(spacing - 6),
           Text(author,
               textAlign: TextAlign.center,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(fontWeight: FontWeight.normal, fontSize: 9))
+              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                  fontWeight: FontWeight.normal,
+                  fontSize: FontSize.blockSizeHorizontal! * 2.5))
         ],
       ),
     );

@@ -2,6 +2,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:gap/gap.dart';
 
@@ -23,19 +24,25 @@ class LuceGuideButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => onPressed(),
-      child: Container(
-        width: 315,
-        decoration: BoxDecoration(
-            color: background,
-            // border:
-            //     Border.all(width: 0, color: lightGrey),
-            borderRadius: BorderRadius.circular(10)),
-        child: Padding(
-          padding: EdgeInsets.all(spacing * 1.3),
+    FontSize().init(context);
+    return ElevatedButton(
+      style: ButtonStyle(
+        elevation: MaterialStateProperty.all(0),
+        backgroundColor: MaterialStatePropertyAll(background),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radius),
+          ),
+        ),
+      ),
+      onPressed: () => onPressed(),
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+            horizontal: spacing * 1.3, vertical: spacing * 3),
+        child: Container(
+          width: FontSize.blockSizeHorizontal! * 75,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Column(
@@ -44,11 +51,13 @@ class LuceGuideButton extends StatelessWidget {
                 children: [
                   Text(title,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.normal, fontSize: 17)),
+                          fontWeight: FontWeight.normal,
+                          fontSize: FontSize.blockSizeHorizontal! * 4.2)),
                   Gap(spacing),
                   Text(total,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.normal, fontSize: 12)),
+                          fontWeight: FontWeight.normal,
+                          fontSize: FontSize.blockSizeHorizontal! * 3)),
                   Gap(spacing),
                 ],
               ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
@@ -12,6 +13,7 @@ class NotificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -22,10 +24,9 @@ class NotificationPage extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Notification",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
