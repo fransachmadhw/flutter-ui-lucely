@@ -51,8 +51,8 @@ class LuceGuideButton extends StatelessWidget {
                 children: [
                   Text(title,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.normal,
-                          fontSize: FontSize.blockSizeHorizontal! * 4.2)),
+                          fontWeight: FontWeight.w700,
+                          fontSize: FontSize.blockSizeHorizontal! * 4)),
                   Gap(spacing),
                   Text(total,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(

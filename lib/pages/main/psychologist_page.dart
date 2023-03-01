@@ -10,6 +10,7 @@ import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/psychologist_model.dart';
+import 'package:lucely_app/pages/main/testaja.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 import 'package:lucely_app/widgets/card/psychologist_review_card.dart';
 
@@ -519,7 +520,16 @@ class _PsychologistPageState extends State<PsychologistPage> {
           ),
           SizedBox(
             height: spacing * 3,
-          )
+          ),
+          ElevatedButton(
+              onPressed: () => Get.to(
+                  () => TestAja(
+                        psychologistModel: widget.psychologistModel,
+                      ),
+                  transition: Transition.rightToLeft),
+              child: Text("Test",
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w700, fontSize: 17, color: white)))
         ],
       ))),
       bottomNavigationBar: Container(

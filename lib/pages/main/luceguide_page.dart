@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
@@ -9,147 +7,411 @@ import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/luceguide_model.dart';
-import 'package:lucely_app/widgets/button/luceguide.dart';
-import 'package:lucely_app/widgets/input/rounded_search_input.dart';
+import 'package:lucely_app/pages/main/about_page.dart';
+import 'package:lucely_app/pages/main/choose_mentor.dart';
+import 'package:lucely_app/pages/main/luceguide_session1.dart';
+import 'package:lucely_app/pages/main/luceguide_session2.dart';
+import 'package:lucely_app/pages/main/luceguide_session3.dart';
+import 'package:lucely_app/pages/main/luceguide_session4.dart';
+import 'package:lucely_app/pages/main/luceguide_session5.dart';
+import 'package:lucely_app/widgets/button/luceguide_session.dart';
 
 class LuceGuidePage extends StatelessWidget {
-  const LuceGuidePage({super.key});
+  final LuceGuideModel luceGuideModel;
+  const LuceGuidePage({super.key, required this.luceGuideModel});
 
   @override
   Widget build(BuildContext context) {
     FontSize().init(context);
-
-    final List<String> title = <String>[
-      "Overcome Lonely",
-      "Reduce Anxiety",
-      "Mind Management Building",
-      "Overcome Demotivation",
-      "Stop Self-Harming",
-      "Eisen-Hower Matrixs Method"
-    ];
-
-    final List<String> image = <String>[
-      "assets/images/lonely.png",
-      "assets/images/Anxiety.png",
-      "assets/images/mind-management.png",
-      "assets/images/demotivation.png",
-      "assets/images/self-harm.png",
-      "assets/images/self-harm.png"
-    ];
-
-    final List<Color> background = <Color>[
-      lemonChiffon,
-      greenLight,
-      pigPink,
-      lightCyan,
-      lemonChiffon,
-      greenLight
-    ];
-
-    final List<LuceGuideModel> luceGuideData = List.generate(
-        title.length,
-        (index) => LuceGuideModel(
-            '${title[index]}', '${image[index]}', background[index]));
-
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
-        shape: Border(bottom: BorderSide(color: veryLightGrey, width: 1)),
-        backgroundColor: white,
+        backgroundColor: luceGuideModel.background,
         elevation: 0,
         automaticallyImplyLeading: false,
         leading: IconButton(
             onPressed: () => Get.back(),
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
-        centerTitle: true,
-        title: Text("LuceGuide",
-            style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                fontWeight: FontWeight.w700,
-                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(spacing * 3),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: [
-              ListView.separated(
-                scrollDirection: Axis.vertical,
-                physics: const BouncingScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: title.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return ElevatedButton(
-                    style: ButtonStyle(
-                      elevation: MaterialStateProperty.all(0),
-                      backgroundColor: MaterialStatePropertyAll(
-                          luceGuideData[index].background),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(radius),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: MediaQuery.of(context).size.width,
+              color: luceGuideModel.background,
+              child: Padding(
+                padding: EdgeInsets.all(spacing * 3),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    SizedBox(
+                      width: FontSize.blockSizeHorizontal! * 50,
+                      child: Text(luceGuideModel.title,
+                          textAlign: TextAlign.center,
+                          maxLines: 3,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: FontSize.blockSizeHorizontal! * 7)),
+                    ),
+                    Gap(spacing),
+                    SizedBox(
+                      width: FontSize.blockSizeHorizontal! * 50,
+                      height: FontSize.blockSizeVertical! * 30,
+                      child: Image.asset(luceGuideModel.imageUrl),
+                    ),
+                    Gap(spacing),
+                    SizedBox(
+                      width: FontSize.blockSizeHorizontal! * 70,
+                      child: Text(
+                          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
+                          textAlign: TextAlign.justify,
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .copyWith(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize:
+                                      FontSize.blockSizeHorizontal! * 3.5)),
+                    ),
+                    Gap(spacing * 3),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(spacing * 3),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ElevatedButton(
+                      onPressed: () => Get.to(() => LuceGuideSession1(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500)),
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(0),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.pressed)) {
+                              return columbiaBlue;
+                            }
+                            return white;
+                          },
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(radius),
+                            side: const BorderSide(
+                              width: 1,
+                              color: lightGrey,
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                    onPressed: () => {},
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: spacing * 1, vertical: spacing * 4),
-                      child: Container(
-                        // width: FontSize.blockSizeHorizontal! * 100,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          crossAxisAlignment: CrossAxisAlignment.center,
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: spacing, vertical: spacing * 3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(luceGuideData[index].title,
-                                    maxLines: 3,
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.normal,
-                                            fontSize:
-                                                FontSize.blockSizeHorizontal! *
-                                                    4)),
-                                Gap(spacing),
-                                Text("5 sessions",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .titleMedium!
-                                        .copyWith(
-                                            fontWeight: FontWeight.normal,
-                                            fontSize:
-                                                FontSize.blockSizeHorizontal! *
-                                                    3)),
-                                Gap(spacing),
-                              ],
-                            ),
-                            SizedBox(
-                              width: 85,
-                              height: 64,
-                              child: Image.asset(
-                                luceGuideData[index].imageUrl,
-                                // width: 90,
-                                // height: 90,
-                              ),
-                            )
+                            Text("Session 1",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                            Gap(spacing),
+                            Text("Introduction",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 5)),
+                            Gap(spacing),
+                            Text("5 minutes",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
                           ],
                         ),
+                      )),
+                  Gap(spacing * 3),
+                  ElevatedButton(
+                      onPressed: () => Get.to(() => LuceGuideSession2(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500)),
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(0),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.pressed)) {
+                              return columbiaBlue;
+                            }
+                            return white;
+                          },
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(radius),
+                            side: const BorderSide(
+                              width: 1,
+                              color: lightGrey,
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                  );
-                },
-                separatorBuilder: (BuildContext context, int index) =>
-                    const Divider(
-                  color: Colors.transparent,
-                ),
-              )
-            ],
-          ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: spacing, vertical: spacing * 3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text("Session 2",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                            Gap(spacing),
+                            Text("Lorem Ipsum",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 5)),
+                            Gap(spacing),
+                            Text("5 minutes",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                          ],
+                        ),
+                      )),
+                  Gap(spacing * 3),
+                  ElevatedButton(
+                      onPressed: () => Get.to(() => LuceGuideSession3(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500)),
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(0),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.pressed)) {
+                              return columbiaBlue;
+                            }
+                            return white;
+                          },
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(radius),
+                            side: const BorderSide(
+                              width: 1,
+                              color: lightGrey,
+                            ),
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: spacing, vertical: spacing * 3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text("Session 3",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                            Gap(spacing),
+                            Text("Lorem Ipsum",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 5)),
+                            Gap(spacing),
+                            Text("5 minutes",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                          ],
+                        ),
+                      )),
+                  Gap(spacing * 3),
+                  ElevatedButton(
+                      onPressed: () => Get.to(() => LuceGuideSession4(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500)),
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(0),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.pressed)) {
+                              return columbiaBlue;
+                            }
+                            return white;
+                          },
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(radius),
+                            side: const BorderSide(
+                              width: 1,
+                              color: lightGrey,
+                            ),
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: spacing, vertical: spacing * 3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text("Session 4",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                            Gap(spacing),
+                            Text("Lorem Ipsum",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 5)),
+                            Gap(spacing),
+                            Text("5 minutes",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                          ],
+                        ),
+                      )),
+                  Gap(spacing * 3),
+                  ElevatedButton(
+                      onPressed: () => Get.to(() => LuceGuideSession5(),
+                          transition: Transition.rightToLeft,
+                          duration: const Duration(milliseconds: 500)),
+                      style: ButtonStyle(
+                        elevation: MaterialStateProperty.all(0),
+                        backgroundColor:
+                            MaterialStateProperty.resolveWith<Color>(
+                          (Set<MaterialState> states) {
+                            if (states.contains(MaterialState.pressed)) {
+                              return columbiaBlue;
+                            }
+                            return white;
+                          },
+                        ),
+                        shape: MaterialStateProperty.all(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(radius),
+                            side: const BorderSide(
+                              width: 1,
+                              color: lightGrey,
+                            ),
+                          ),
+                        ),
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: spacing, vertical: spacing * 3),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Text("Session 5",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                            Gap(spacing),
+                            Text("Closing",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 5)),
+                            Gap(spacing),
+                            Text("5 minutes",
+                                maxLines: 3,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize:
+                                            FontSize.blockSizeHorizontal! * 3)),
+                          ],
+                        ),
+                      )),
+                  Gap(spacing * 3),
+                ],
+              ),
+            ),
+          ],
         ),
       )),
     );

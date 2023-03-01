@@ -10,8 +10,10 @@ import 'package:iconify_flutter/icons/ri.dart';
 import 'package:iconify_flutter/icons/teenyicons.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/controller/pages/authentication/splash_screen2_controller.dart';
+import 'package:lucely_app/data/luceguide_model.dart';
 import 'package:lucely_app/pages/main/choose_mentor.dart';
 import 'package:lucely_app/pages/main/choose_psychologist.dart';
+import 'package:lucely_app/pages/main/choose_luceguide.dart';
 import 'package:lucely_app/pages/main/luceguide_page.dart';
 import 'package:lucely_app/pages/main/notification_page.dart';
 import 'package:lucely_app/widgets/button/bookluce.dart';
@@ -79,7 +81,7 @@ class HomePage extends StatelessWidget {
                                 )),
                           ],
                         ),
-                        Text("Hi, Zadev",
+                        Text("Hi, Franz",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
@@ -130,7 +132,7 @@ class HomePage extends StatelessWidget {
                                 label: "Event",
                               ),
                               FeatureButton(
-                                onPressed: () => Get.to(() => LuceGuidePage(),
+                                onPressed: () => Get.to(() => ChooseLuceGuide(),
                                     transition: Transition.rightToLeft,
                                     duration:
                                         const Duration(milliseconds: 500)),
@@ -565,7 +567,7 @@ class HomePage extends StatelessWidget {
                                 ),
                                 InkWell(
                                   highlightColor: columbiaBlue.withOpacity(0.5),
-                                  onTap: () => Get.to(() => LuceGuidePage(),
+                                  onTap: () => Get.to(() => ChooseLuceGuide(),
                                       transition: Transition.rightToLeft,
                                       duration:
                                           const Duration(milliseconds: 500)),
@@ -590,7 +592,15 @@ class HomePage extends StatelessWidget {
                               children: [
                                 Gap(spacing * 3),
                                 LuceGuideButton(
-                                  onPressed: () {},
+                                  onPressed: () => Get.to(
+                                      () => LuceGuidePage(
+                                          luceGuideModel: LuceGuideModel(
+                                              "Overcome Lonely",
+                                              "assets/images/lonely.png",
+                                              lemonChiffon)),
+                                      transition: Transition.rightToLeft,
+                                      duration:
+                                          const Duration(milliseconds: 500)),
                                   image: 'assets/images/lonely.png',
                                   title: "Overcome Lonely",
                                   total: "5 sessions",
@@ -598,7 +608,15 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Gap(spacing * 2),
                                 LuceGuideButton(
-                                  onPressed: () {},
+                                  onPressed: () => Get.to(
+                                      () => LuceGuidePage(
+                                          luceGuideModel: LuceGuideModel(
+                                              "Mind Management Building",
+                                              "assets/images/mind-management.png",
+                                              pigPink)),
+                                      transition: Transition.rightToLeft,
+                                      duration:
+                                          const Duration(milliseconds: 500)),
                                   image: 'assets/images/mind-management.png',
                                   title: "Mind Management Building",
                                   total: "5 sessions",
@@ -606,11 +624,19 @@ class HomePage extends StatelessWidget {
                                 ),
                                 Gap(spacing * 2),
                                 LuceGuideButton(
-                                  onPressed: () {},
+                                  onPressed: () => Get.to(
+                                      () => LuceGuidePage(
+                                          luceGuideModel: LuceGuideModel(
+                                              "Overcome Demotivation",
+                                              "assets/images/demotivation.png",
+                                              lightCyan)),
+                                      transition: Transition.rightToLeft,
+                                      duration:
+                                          const Duration(milliseconds: 500)),
                                   image: 'assets/images/demotivation.png',
                                   title: "Overcome Demotivation",
                                   total: "5 sessions",
-                                  background: columbiaBlue,
+                                  background: lightCyan,
                                 ),
                                 Gap(spacing * 3),
                               ],
