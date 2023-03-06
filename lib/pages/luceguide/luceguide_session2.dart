@@ -9,8 +9,8 @@ import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/pages/main/luceguide_session1.dart';
-import 'package:lucely_app/pages/main/luceguide_session3.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session1.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session3.dart';
 
 class LuceGuideSession2 extends StatelessWidget {
   const LuceGuideSession2({super.key});

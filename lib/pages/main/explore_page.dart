@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:gap/gap.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/widgets/card/category_card.dart';
 import 'package:lucely_app/widgets/input/rounded_search_input.dart';
@@ -16,6 +17,7 @@ class ExplorePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return WillPopScope(
         onWillPop: _onWillPop,
         child: Scaffold(
@@ -30,8 +32,8 @@ class ExplorePage extends StatelessWidget {
                     Text(
                       "Start to treat your mental-health from here..",
                       style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
+                          fontWeight: FontWeight.bold,
+                          fontSize: FontSize.blockSizeHorizontal! * 4),
                     ),
                     const Gap(spacing * 3),
                     const RoundedSearchInput(

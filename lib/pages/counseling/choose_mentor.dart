@@ -7,14 +7,16 @@ import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/mentor_model.dart';
-import 'package:lucely_app/pages/main/mentor_page.dart';
+import 'package:lucely_app/pages/counseling/mentor_page.dart';
 import 'package:lucely_app/widgets/input/rounded_search_input.dart';
+import 'package:lucely_app/common/font_size.dart';
 
 class ChooseMentor extends StatelessWidget {
   const ChooseMentor({super.key});
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     final List<String> name = <String>[
       "Luis Firmansyah",
       "Bagas Sirait",
@@ -46,10 +48,9 @@ class ChooseMentor extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Choose your mentor",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -108,8 +109,8 @@ class ChooseMentor extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Container(
-                                    height: 160.0,
-                                    width: 100,
+                                    height: FontSize.blockSizeVertical! * 20,
+                                    width: FontSize.blockSizeHorizontal! * 30,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
                                       image: DecorationImage(
@@ -121,7 +122,7 @@ class ChooseMentor extends StatelessWidget {
                                   ),
                                   Gap(spacing * 2),
                                   SizedBox(
-                                    width: 150,
+                                    width: FontSize.blockSizeHorizontal! * 32,
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.stretch,
@@ -134,7 +135,9 @@ class ChooseMentor extends StatelessWidget {
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight: FontWeight.w700,
-                                                    fontSize: 16)),
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        4)),
                                         Text("CEO Lucely App",
                                             style: Theme.of(context)
                                                 .textTheme
@@ -142,10 +145,13 @@ class ChooseMentor extends StatelessWidget {
                                                 .copyWith(
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontSize: 11)),
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        2.5)),
                                         Gap(spacing * 1),
                                         SizedBox(
-                                          width: 200,
+                                          width: FontSize.blockSizeHorizontal! *
+                                              28,
                                           child: Text(
                                               "Career Path, Self Development, Education, Interview, Productivity, +3 others",
                                               maxLines: 3,
@@ -155,7 +161,9 @@ class ChooseMentor extends StatelessWidget {
                                                   .copyWith(
                                                       fontWeight:
                                                           FontWeight.normal,
-                                                      fontSize: 11,
+                                                      fontSize: FontSize
+                                                              .blockSizeHorizontal! *
+                                                          2.5,
                                                       color: darkGrey)),
                                         ),
                                         Gap(spacing * 1),
@@ -184,7 +192,9 @@ class ChooseMentor extends StatelessWidget {
                                                 .titleMedium!
                                                 .copyWith(
                                                     fontWeight: FontWeight.w700,
-                                                    fontSize: 12)),
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        3)),
                                         Gap(spacing * 0.2),
                                         Text("Sunday, 7:00 pm",
                                             style: Theme.of(context)
@@ -193,7 +203,9 @@ class ChooseMentor extends StatelessWidget {
                                                 .copyWith(
                                                     fontWeight:
                                                         FontWeight.normal,
-                                                    fontSize: 11,
+                                                    fontSize: FontSize
+                                                            .blockSizeHorizontal! *
+                                                        2.5,
                                                     color: darkGrey)),
                                         Gap(spacing * 1),
                                         ConstrainedBox(

@@ -1,5 +1,3 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -7,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/pages/main/account_page.dart';
-import 'package:lucely_app/pages/main/change_password_page.dart';
+import 'package:lucely_app/pages/account/change_password_page.dart';
 import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:lucely_app/widgets/button/primary_button.dart';
 import 'package:lucely_app/widgets/dialog/success_dialog.dart';
@@ -20,6 +18,7 @@ class EditAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     void openDialog() {
       showDialog(
         context: context,
@@ -44,10 +43,9 @@ class EditAccount extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Edit Account",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -98,7 +96,9 @@ class EditAccount extends StatelessWidget {
                 decoration: BoxDecoration(color: lightGrey),
               ),
               ElevatedButton(
-                onPressed: () => Get.to(() => ChangePassword()),
+                onPressed: () => Get.to(() => ChangePassword(),
+                    transition: Transition.rightToLeft,
+                    duration: const Duration(milliseconds: 500)),
                 style: ButtonStyle(
                   elevation: MaterialStateProperty.all(0),
                   backgroundColor:
@@ -146,7 +146,7 @@ class EditAccount extends StatelessWidget {
               Gap(spacing * 7),
               PrimaryButton(
                 onPressed: () => openDialog(),
-                title: "Simpan",
+                title: "Save",
                 type: ButtonType.primary,
                 isLoading: false,
               ),

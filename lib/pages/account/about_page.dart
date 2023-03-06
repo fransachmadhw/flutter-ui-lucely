@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 
 class About extends StatelessWidget {
@@ -14,6 +15,7 @@ class About extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -26,10 +28,9 @@ class About extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("About App",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       //
       body: SafeArea(
@@ -46,7 +47,7 @@ class About extends StatelessWidget {
                       // overflow: TextOverflow.clip,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                           fontWeight: FontWeight.normal,
-                          fontSize: 14,
+                          fontSize: FontSize.blockSizeHorizontal! * 3.5,
                           height: 1.7)),
                 ),
                 Gap(spacing * 2),
@@ -57,7 +58,7 @@ class About extends StatelessWidget {
                       // overflow: TextOverflow.clip,
                       style: Theme.of(context).textTheme.bodySmall!.copyWith(
                           fontWeight: FontWeight.normal,
-                          fontSize: 14,
+                          fontSize: FontSize.blockSizeHorizontal! * 3.5,
                           height: 1.7)),
                 ),
               ],

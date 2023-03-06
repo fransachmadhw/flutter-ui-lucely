@@ -337,10 +337,9 @@ class _PsychologistPageState extends State<PsychologistPage> {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Psychologist Detail",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -372,7 +371,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing * 1),
                     SizedBox(
                       width: 210,
@@ -385,7 +385,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                               .titleMedium!
                               .copyWith(
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 13,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3,
                                   color: darkGrey)),
                     ),
                     Gap(spacing * 1),
@@ -394,7 +394,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.normal, fontSize: 13)),
+                                fontWeight: FontWeight.normal,
+                                fontSize: FontSize.blockSizeHorizontal! * 3)),
                     Gap(spacing * 3),
                     Container(
                       // width: 200,
@@ -412,7 +413,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing),
                     Container(
                       height: 8,
@@ -428,7 +430,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                             .titleMedium!
                             .copyWith(
                                 fontWeight: FontWeight.normal,
-                                fontSize: 14,
+                                fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 height: 1.5)),
                     Gap(spacing * 4),
                     Text("Nearest Schedule",
@@ -436,7 +438,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing),
                     Container(
                       height: 8,
@@ -453,7 +456,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                         Text(" Oct 8, 2023 | 7:00 pm",
                             style: Theme.of(context)
@@ -461,7 +464,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                       ],
                     ),
@@ -473,7 +476,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                         Text(" Oct 9, 2023 | 7:00 pm",
                             style: Theme.of(context)
@@ -481,7 +484,7 @@ class _PsychologistPageState extends State<PsychologistPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                       ],
                     ),
@@ -491,7 +494,8 @@ class _PsychologistPageState extends State<PsychologistPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing),
                     Container(
                       height: 8,
@@ -521,19 +525,10 @@ class _PsychologistPageState extends State<PsychologistPage> {
           SizedBox(
             height: spacing * 3,
           ),
-          ElevatedButton(
-              onPressed: () => Get.to(
-                  () => TestAja(
-                        psychologistModel: widget.psychologistModel,
-                      ),
-                  transition: Transition.rightToLeft),
-              child: Text("Test",
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                      fontWeight: FontWeight.w700, fontSize: 17, color: white)))
         ],
       ))),
       bottomNavigationBar: Container(
-          height: 90,
+          height: FontSize.blockSizeVertical! * 10.5,
           decoration: BoxDecoration(
               color: white,
               border: Border(top: BorderSide(color: lightGrey, width: 1))),

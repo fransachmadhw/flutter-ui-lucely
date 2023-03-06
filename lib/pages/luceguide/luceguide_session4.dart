@@ -9,11 +9,11 @@ import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/pages/main/luceguide_session1.dart';
-import 'package:lucely_app/pages/main/luceguide_session4.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session1.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session5.dart';
 
-class LuceGuideSession3 extends StatelessWidget {
-  const LuceGuideSession3({super.key});
+class LuceGuideSession4 extends StatelessWidget {
+  const LuceGuideSession4({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class LuceGuideSession3 extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Text("Session 3",
+              Text("Session 4",
                   textAlign: TextAlign.center,
                   maxLines: 3,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
@@ -96,7 +96,7 @@ class LuceGuideSession3 extends StatelessWidget {
                 width: FontSize.blockSizeHorizontal! * 12,
                 height: FontSize.blockSizeHorizontal! * 12,
                 child: ElevatedButton(
-                    onPressed: () => Get.to(() => LuceGuideSession4(),
+                    onPressed: () => Get.to(() => LuceGuideSession5(),
                         transition: Transition.rightToLeft,
                         duration: const Duration(milliseconds: 500)),
                     style: ButtonStyle(

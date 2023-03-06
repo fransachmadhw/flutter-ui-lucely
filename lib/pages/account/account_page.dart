@@ -1,17 +1,14 @@
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:iconify_flutter/iconify_flutter.dart';
-import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/pages/authentication/splash_screen2.dart';
-import 'package:lucely_app/pages/main/contact_admin_page.dart';
-import 'package:lucely_app/pages/main/edit_account_page.dart';
-import 'package:lucely_app/pages/main/get_help_page.dart';
+import 'package:lucely_app/pages/account/contact_admin_page.dart';
+import 'package:lucely_app/pages/account/edit_account_page.dart';
+import 'package:lucely_app/pages/account/get_help_page.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({super.key});
@@ -22,21 +19,22 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return WillPopScope(
         onWillPop: _onWillPop,
         child: Scaffold(
           backgroundColor: white,
           appBar: AppBar(
-            shape: Border(bottom: BorderSide(color: veryLightGrey, width: 1)),
+            shape: const Border(
+                bottom: BorderSide(color: veryLightGrey, width: 1)),
             backgroundColor: white,
             elevation: 0,
             automaticallyImplyLeading: false,
             centerTitle: true,
             title: Text("Account",
-                style: Theme.of(context)
-                    .textTheme
-                    .titleMedium!
-                    .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+                style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                    fontWeight: FontWeight.w700,
+                    fontSize: FontSize.blockSizeHorizontal! * 4)),
           ),
           body: SafeArea(
               child: SingleChildScrollView(
@@ -45,18 +43,12 @@ class AccountPage extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  // Gap(spacing),
-                  // SizedBox(
-                  //   width: 80,
-                  //   height: 80,
-                  //   child: Image.asset('assets/images/avatar.png'),
-                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 80,
-                        height: 80,
+                        width: FontSize.blockSizeHorizontal! * 25,
+                        height: FontSize.blockSizeHorizontal! * 25,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(radius * 10),
                             image: DecorationImage(
@@ -66,7 +58,6 @@ class AccountPage extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   Gap(spacing),
                   Column(
                     children: [
@@ -75,38 +66,36 @@ class AccountPage extends StatelessWidget {
                               .textTheme
                               .titleMedium!
                               .copyWith(
-                                  fontWeight: FontWeight.w700, fontSize: 15)),
-                      Gap(spacing - 4),
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: FontSize.blockSizeHorizontal! * 4)),
+                      Gap(spacing / 2),
                       Text("sayonara@gmail.com",
                           style: Theme.of(context)
                               .textTheme
                               .titleMedium!
                               .copyWith(
-                                  fontWeight: FontWeight.normal, fontSize: 10))
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3))
                     ],
                   ),
                   Gap(spacing * 3),
                   Container(
                     // width: 200,
                     height: 1,
-                    decoration: BoxDecoration(color: lightGrey),
+                    decoration: const BoxDecoration(color: lightGrey),
                   ),
                   Gap(spacing * 3),
                   ElevatedButton(
-                    onPressed: () => Get.to(() => EditAccount()),
+                    onPressed: () => Get.to(() => const EditAccount(),
+                        transition: Transition.rightToLeft,
+                        duration: const Duration(milliseconds: 500)),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
                       backgroundColor:
                           MaterialStateProperty.all(Colors.transparent),
-                      // shape: MaterialStateProperty.all(
-                      //   RoundedRectangleBorder(
-                      //     borderRadius: BorderRadius.circular(0),
-                      //     side: BorderSide(width: 1, color: lightGrey),
-                      //   ),
-                      // ),
                     ),
                     child: Container(
-                      height: 20,
+                      height: FontSize.blockSizeVertical! * 5,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,7 +115,9 @@ class AccountPage extends StatelessWidget {
                                       .titleMedium!
                                       .copyWith(
                                           fontWeight: FontWeight.normal,
-                                          fontSize: 14))
+                                          fontSize:
+                                              FontSize.blockSizeHorizontal! *
+                                                  3.5))
                             ],
                           ),
                           SvgPicture.asset(
@@ -139,20 +130,16 @@ class AccountPage extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () => Get.to(() => GetHelp()),
+                    onPressed: () => Get.to(() => const GetHelp(),
+                        transition: Transition.rightToLeft,
+                        duration: const Duration(milliseconds: 500)),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
                       backgroundColor:
                           MaterialStateProperty.all(Colors.transparent),
-                      // shape: MaterialStateProperty.all(
-                      //   RoundedRectangleBorder(
-                      //     borderRadius: BorderRadius.circular(0),
-                      //     side: BorderSide(width: 1, color: lightGrey),
-                      //   ),
-                      // ),
                     ),
                     child: Container(
-                      height: 20,
+                      height: FontSize.blockSizeVertical! * 5,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -172,7 +159,9 @@ class AccountPage extends StatelessWidget {
                                       .titleMedium!
                                       .copyWith(
                                           fontWeight: FontWeight.normal,
-                                          fontSize: 14))
+                                          fontSize:
+                                              FontSize.blockSizeHorizontal! *
+                                                  3.5))
                             ],
                           ),
                           SvgPicture.asset(
@@ -185,20 +174,16 @@ class AccountPage extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () => Get.to(() => ContactAdmin()),
+                    onPressed: () => Get.to(() => const ContactAdmin(),
+                        transition: Transition.rightToLeft,
+                        duration: const Duration(milliseconds: 500)),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
                       backgroundColor:
                           MaterialStateProperty.all(Colors.transparent),
-                      // shape: MaterialStateProperty.all(
-                      //   RoundedRectangleBorder(
-                      //     borderRadius: BorderRadius.circular(0),
-                      //     side: BorderSide(width: 1, color: lightGrey),
-                      //   ),
-                      // ),
                     ),
                     child: Container(
-                      height: 20,
+                      height: FontSize.blockSizeVertical! * 5,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -218,7 +203,9 @@ class AccountPage extends StatelessWidget {
                                       .titleMedium!
                                       .copyWith(
                                           fontWeight: FontWeight.normal,
-                                          fontSize: 14))
+                                          fontSize:
+                                              FontSize.blockSizeHorizontal! *
+                                                  3.5))
                             ],
                           ),
                           SvgPicture.asset(
@@ -231,20 +218,16 @@ class AccountPage extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () => Get.to(() => SplashScreen2()),
+                    onPressed: () => Get.to(() => SplashScreen2(),
+                        transition: Transition.upToDown,
+                        duration: const Duration(milliseconds: 500)),
                     style: ButtonStyle(
                       elevation: MaterialStateProperty.all(0),
                       backgroundColor:
                           MaterialStateProperty.all(Colors.transparent),
-                      // shape: MaterialStateProperty.all(
-                      //   RoundedRectangleBorder(
-                      //     borderRadius: BorderRadius.circular(0),
-                      //     side: BorderSide(width: 1, color: lightGrey),
-                      //   ),
-                      // ),
                     ),
                     child: Container(
-                      height: 20,
+                      height: FontSize.blockSizeVertical! * 5,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         crossAxisAlignment: CrossAxisAlignment.center,
@@ -264,7 +247,9 @@ class AccountPage extends StatelessWidget {
                                       .titleMedium!
                                       .copyWith(
                                           fontWeight: FontWeight.normal,
-                                          fontSize: 14))
+                                          fontSize:
+                                              FontSize.blockSizeHorizontal! *
+                                                  3.5))
                             ],
                           ),
                           SvgPicture.asset(

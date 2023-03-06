@@ -7,7 +7,7 @@ import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/psychologist_model.dart';
-import 'package:lucely_app/pages/main/psychologist_page.dart';
+import 'package:lucely_app/pages/counseling/psychologist_page.dart';
 import 'package:lucely_app/widgets/input/rounded_search_input.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 

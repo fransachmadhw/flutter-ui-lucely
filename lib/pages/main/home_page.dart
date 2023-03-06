@@ -1,26 +1,20 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/bi.dart';
-import 'package:iconify_flutter/icons/ic.dart';
-import 'package:iconify_flutter/icons/ph.dart';
-import 'package:iconify_flutter/icons/ri.dart';
-import 'package:iconify_flutter/icons/teenyicons.dart';
 import 'package:lucely_app/common/font_size.dart';
-import 'package:lucely_app/controller/pages/authentication/splash_screen2_controller.dart';
+import 'package:lucely_app/data/events_model.dart';
 import 'package:lucely_app/data/luceguide_model.dart';
-import 'package:lucely_app/pages/main/choose_mentor.dart';
-import 'package:lucely_app/pages/main/choose_psychologist.dart';
-import 'package:lucely_app/pages/main/choose_luceguide.dart';
-import 'package:lucely_app/pages/main/luceguide_page.dart';
+import 'package:lucely_app/pages/counseling/choose_mentor.dart';
+import 'package:lucely_app/pages/counseling/choose_psychologist.dart';
+import 'package:lucely_app/pages/events/choose_events.dart';
+import 'package:lucely_app/pages/events/event_page.dart';
+import 'package:lucely_app/pages/luceguide/choose_luceguide.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_page.dart';
 import 'package:lucely_app/pages/main/notification_page.dart';
 import 'package:lucely_app/widgets/button/bookluce.dart';
 import 'package:lucely_app/widgets/button/event_button.dart';
 import 'package:lucely_app/widgets/button/feature_button.dart';
 import 'package:lucely_app/widgets/button/luceguide.dart';
-import 'package:sizer/sizer.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:lucely_app/common/color_palettes.dart';
@@ -29,7 +23,6 @@ import 'package:lucely_app/controller/pages/main/main_app_controller.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
-  // final pageController = Get.put(SplashScreen2Controller());
 
   Future<bool> _onWillPop() async {
     return false;
@@ -127,7 +120,10 @@ class HomePage extends StatelessWidget {
                                 label: "Counseling",
                               ),
                               FeatureButton(
-                                onPressed: () {},
+                                onPressed: () => Get.to(() => ChooseEvents(),
+                                    transition: Transition.rightToLeft,
+                                    duration:
+                                        const Duration(milliseconds: 500)),
                                 image: "assets/images/Events.png",
                                 label: "Event",
                               ),
@@ -485,7 +481,10 @@ class HomePage extends StatelessWidget {
                                   ],
                                 ),
                                 InkWell(
-                                  onTap: () {},
+                                  onTap: () => Get.to(() => ChooseEvents(),
+                                      transition: Transition.rightToLeft,
+                                      duration:
+                                          const Duration(milliseconds: 500)),
                                   child: Text("See more",
                                       style: Theme.of(context)
                                           .textTheme
@@ -500,32 +499,59 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           SizedBox(
-                            height: 125,
+                            height: FontSize.blockSizeVertical! * 18,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
                               children: [
                                 Gap(spacing * 3),
                                 EventButton(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => EventPage(
+                                            eventsModel: EventsModel(
+                                                "Take Care of Well-Being during Pandemic",
+                                                'assets/images/event1.png')),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: 'assets/images/event1.png',
-                                    title: "Create Mindfullness in\nAcademic",
-                                    date: "Rabu, 27 Februari 2023",
-                                    time: "14:00 - 15:30"),
+                                    title:
+                                        "Take Care of Well-Being during Pandemic",
+                                    date: "Wednesday, 27 February 2023",
+                                    time: "2:00 PM - 3:30 PM"),
                                 Gap(spacing * 2),
                                 EventButton(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => EventPage(
+                                            eventsModel: EventsModel(
+                                                "The Key to Being Confident without Being Overconfident",
+                                                'assets/images/event2.png')),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: 'assets/images/event2.png',
-                                    title: "Create Mindfullness in\nAcademic",
-                                    date: "Rabu, 27 Februari 2023",
-                                    time: "14:00 - 15:30"),
+                                    title:
+                                        "The Key to Being Confident without Being Overconfident",
+                                    date: "Wednesday, 27 February 2023",
+                                    time: "2:00 PM - 3:30 PM"),
                                 Gap(spacing * 2),
                                 EventButton(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => EventPage(
+                                            eventsModel: EventsModel(
+                                                "Deal With Your Innerchild in Deep Talking",
+                                                'assets/images/event3.png')),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: 'assets/images/event3.png',
-                                    title: "Create Mindfullness in\nAcademic",
-                                    date: "Rabu, 27 Februari 2023",
-                                    time: "14:00 - 15:30"),
+                                    title:
+                                        "Deal With Your Innerchild in Deep Talking",
+                                    date: "Wednesday, 27 February 2023",
+                                    time: "2:00 PM - 3:30 PM"),
                                 Gap(spacing * 3),
                               ],
                             ),

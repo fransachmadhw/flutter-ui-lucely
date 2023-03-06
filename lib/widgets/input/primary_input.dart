@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 
 class PrimaryInput extends StatelessWidget {
@@ -17,12 +18,16 @@ class PrimaryInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return TextField(
+      style: TextStyle(fontSize: FontSize.blockSizeHorizontal! * 3.5),
       decoration: InputDecoration(
         fillColor: blue,
         labelText: label,
         hintText: placeholder ?? "",
-        labelStyle: const TextStyle(color: blue),
+        labelStyle: TextStyle(
+            color: blue, fontSize: FontSize.blockSizeHorizontal! * 3.8),
+        hintStyle: TextStyle(fontSize: FontSize.blockSizeHorizontal! * 3.2),
         enabledBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: blue, width: 1),
           borderRadius: BorderRadius.circular(radius),

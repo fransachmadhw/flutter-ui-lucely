@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/mentor_model.dart';
 import 'package:lucely_app/data/psychologist_model.dart';
@@ -24,6 +25,7 @@ class MentorPage extends StatefulWidget {
 class _MentorPageState extends State<MentorPage> {
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     void openModal() {
       showModalBottomSheet(
           enableDrag: true,
@@ -318,10 +320,9 @@ class _MentorPageState extends State<MentorPage> {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Mentor Detail",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -353,7 +354,8 @@ class _MentorPageState extends State<MentorPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing * 1),
                     SizedBox(
                       width: 210,
@@ -366,7 +368,7 @@ class _MentorPageState extends State<MentorPage> {
                               .titleMedium!
                               .copyWith(
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 13,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3,
                                   color: darkGrey)),
                     ),
                     Gap(spacing * 1),
@@ -375,7 +377,8 @@ class _MentorPageState extends State<MentorPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.normal, fontSize: 13)),
+                                fontWeight: FontWeight.normal,
+                                fontSize: FontSize.blockSizeHorizontal! * 3)),
                     Gap(spacing * 3),
                     Container(
                       // width: 200,
@@ -393,7 +396,8 @@ class _MentorPageState extends State<MentorPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing),
                     Container(
                       height: 8,
@@ -409,7 +413,7 @@ class _MentorPageState extends State<MentorPage> {
                             .titleMedium!
                             .copyWith(
                                 fontWeight: FontWeight.normal,
-                                fontSize: 14,
+                                fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 height: 1.5)),
                     Gap(spacing * 4),
                     Text("Nearest Schedule",
@@ -417,7 +421,8 @@ class _MentorPageState extends State<MentorPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing),
                     Container(
                       height: 8,
@@ -434,7 +439,7 @@ class _MentorPageState extends State<MentorPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                         Text(" Oct 8, 2023 | 7:00 pm",
                             style: Theme.of(context)
@@ -442,7 +447,7 @@ class _MentorPageState extends State<MentorPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                       ],
                     ),
@@ -454,7 +459,7 @@ class _MentorPageState extends State<MentorPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.w700,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                         Text(" Oct 9, 2023 | 7:00 pm",
                             style: Theme.of(context)
@@ -462,7 +467,7 @@ class _MentorPageState extends State<MentorPage> {
                                 .titleMedium!
                                 .copyWith(
                                   fontWeight: FontWeight.normal,
-                                  fontSize: 14,
+                                  fontSize: FontSize.blockSizeHorizontal! * 3.5,
                                 )),
                       ],
                     ),
@@ -472,7 +477,8 @@ class _MentorPageState extends State<MentorPage> {
                             .textTheme
                             .titleMedium!
                             .copyWith(
-                                fontWeight: FontWeight.w700, fontSize: 17)),
+                                fontWeight: FontWeight.w700,
+                                fontSize: FontSize.blockSizeHorizontal! * 4)),
                     Gap(spacing),
                     Container(
                       height: 8,
@@ -505,7 +511,7 @@ class _MentorPageState extends State<MentorPage> {
         ],
       ))),
       bottomNavigationBar: Container(
-          height: 90,
+          height: FontSize.blockSizeVertical! * 10.5,
           decoration: BoxDecoration(
               color: white,
               border: Border(top: BorderSide(color: lightGrey, width: 1))),

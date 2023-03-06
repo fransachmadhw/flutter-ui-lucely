@@ -6,8 +6,8 @@ import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/pages/main/choose_mentor.dart';
-import 'package:lucely_app/pages/main/choose_psychologist.dart';
+import 'package:lucely_app/pages/counseling/choose_mentor.dart';
+import 'package:lucely_app/pages/counseling/choose_psychologist.dart';
 import 'package:lucely_app/pages/main/main_app.dart';
 import 'package:lucely_app/widgets/button/counseling_button.dart';
 import 'package:lucely_app/widgets/card/counseling_card.dart';
@@ -64,9 +64,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -104,9 +103,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -151,9 +149,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -191,9 +188,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -238,9 +234,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -278,9 +273,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -325,9 +319,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -365,9 +358,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -412,9 +404,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -452,9 +443,8 @@ class CounselingPage extends StatelessWidget {
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
                               onPressed: () => Get.to(
-                                  () => const ChoosePsychologist(),
-                                  transition: Transition.rightToLeft,
-                                  duration: const Duration(milliseconds: 700)),
+                                    () => ChoosePsychologist(),
+                                  ),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -535,7 +525,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -564,7 +554,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -602,7 +592,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -631,7 +621,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -667,7 +657,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -696,7 +686,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -734,7 +724,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:
@@ -765,7 +755,7 @@ class CounselingPage extends StatelessWidget {
                               width: FontSize.blockSizeHorizontal! * 30,
                               height: FontSize.blockSizeVertical! * 5),
                           child: ElevatedButton(
-                              onPressed: () => Get.to(ChooseMentor()),
+                              onPressed: () => Get.to(() => ChooseMentor()),
                               style: ButtonStyle(
                                 elevation: MaterialStateProperty.all(0),
                                 backgroundColor:

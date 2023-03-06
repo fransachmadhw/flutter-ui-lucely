@@ -7,13 +7,13 @@ import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/luceguide_model.dart';
-import 'package:lucely_app/pages/main/about_page.dart';
-import 'package:lucely_app/pages/main/choose_mentor.dart';
-import 'package:lucely_app/pages/main/luceguide_session1.dart';
-import 'package:lucely_app/pages/main/luceguide_session2.dart';
-import 'package:lucely_app/pages/main/luceguide_session3.dart';
-import 'package:lucely_app/pages/main/luceguide_session4.dart';
-import 'package:lucely_app/pages/main/luceguide_session5.dart';
+import 'package:lucely_app/pages/account/about_page.dart';
+import 'package:lucely_app/pages/counseling/choose_mentor.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session1.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session2.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session3.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session4.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_session5.dart';
 import 'package:lucely_app/widgets/button/luceguide_session.dart';
 
 class LuceGuidePage extends StatelessWidget {

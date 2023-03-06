@@ -5,6 +5,7 @@ import 'dart:ui';
 const Color blue = Color(0xFF2940D3);
 const Color columbiaBlue = Color(0xFFABD9FF);
 const Color aliceBlue = Color(0xFFE6F3FC);
+const Color lightBlue = Color(0xFFF0F5F8);
 const Color lightCyan = Color(0xFFD2FAFF);
 const Color lemonChiffon = Color(0xFFFFF9CA);
 const Color pigPink = Color(0xFFFFD6EC);

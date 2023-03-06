@@ -9,7 +9,7 @@ import 'package:lucely_app/common/color_palettes.dart';
 import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 import 'package:lucely_app/data/luceguide_model.dart';
-import 'package:lucely_app/pages/main/luceguide_page.dart';
+import 'package:lucely_app/pages/luceguide/luceguide_page.dart';
 import 'package:lucely_app/widgets/button/luceguide.dart';
 import 'package:lucely_app/widgets/input/rounded_search_input.dart';
 
@@ -95,7 +95,7 @@ class ChooseLuceGuide extends StatelessWidget {
                     onPressed: () => Get.to(
                         () =>
                             LuceGuidePage(luceGuideModel: luceGuideData[index]),
-                        transition: Transition.rightToLeft,
+                        transition: Transition.rightToLeftWithFade,
                         duration: const Duration(milliseconds: 500)),
                     child: Padding(
                       padding: EdgeInsets.symmetric(

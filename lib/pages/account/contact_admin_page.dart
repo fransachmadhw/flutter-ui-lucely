@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 
 class ContactAdmin extends StatelessWidget {
@@ -14,6 +15,7 @@ class ContactAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -26,10 +28,9 @@ class ContactAdmin extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("Contact Admin",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
           child: SingleChildScrollView(
@@ -53,31 +54,27 @@ class ContactAdmin extends StatelessWidget {
               ),
               Text("WORK HOURS: 8:00 am - 17:00 pm",
                   // textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.w700,
+                      fontSize: FontSize.blockSizeHorizontal! * 4)),
               Gap(spacing * 3),
               Text("Please contact us from",
                   // textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.normal,
+                      fontSize: FontSize.blockSizeHorizontal! * 3.5)),
               Gap(spacing * 2),
               Text("E-mail - info@lucely.id",
                   // textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.normal,
+                      fontSize: FontSize.blockSizeHorizontal! * 3.5)),
               Gap(spacing * 2),
               Text("WhatsApp - 081xxxxxxxxxx",
                   // textAlign: TextAlign.center,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleMedium!
-                      .copyWith(fontWeight: FontWeight.normal, fontSize: 14)),
+                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.normal,
+                      fontSize: FontSize.blockSizeHorizontal! * 3.5)),
             ],
           ),
         ),

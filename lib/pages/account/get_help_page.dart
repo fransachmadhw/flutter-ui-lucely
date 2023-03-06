@@ -7,14 +7,16 @@ import 'package:get/get.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/material_symbols.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
-import 'package:lucely_app/pages/main/about_page.dart';
+import 'package:lucely_app/pages/account/about_page.dart';
 
 class GetHelp extends StatelessWidget {
   const GetHelp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return Scaffold(
       backgroundColor: white,
       appBar: AppBar(
@@ -27,10 +29,9 @@ class GetHelp extends StatelessWidget {
             icon: Iconify(MaterialSymbols.arrow_back_ios_new_rounded)),
         centerTitle: true,
         title: Text("FAQ and Help",
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(fontWeight: FontWeight.w700, fontSize: 15)),
+            style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.w700,
+                fontSize: FontSize.blockSizeHorizontal! * 4)),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -83,7 +84,9 @@ class GetHelp extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: spacing * 3),
                 child: ElevatedButton(
-                  onPressed: () => Get.to(() => About()),
+                  onPressed: () => Get.to(() => About(),
+                      transition: Transition.rightToLeft,
+                      duration: const Duration(milliseconds: 500)),
                   style: ButtonStyle(
                     elevation: MaterialStateProperty.all(0),
                     backgroundColor:
