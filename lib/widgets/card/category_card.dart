@@ -13,7 +13,7 @@ class CategoryCard extends StatelessWidget {
       onPressed: () {},
       style: ButtonStyle(
         elevation: MaterialStateProperty.all(0),
-        backgroundColor: MaterialStateProperty.all(Colors.white),
+        backgroundColor: MaterialStateProperty.all(white),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(radius * 2),

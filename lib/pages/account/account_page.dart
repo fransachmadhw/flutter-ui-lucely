@@ -58,7 +58,7 @@ class AccountPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Gap(spacing),
+                  const Gap(spacing),
                   Column(
                     children: [
                       Text("Sayonara",
@@ -68,7 +68,7 @@ class AccountPage extends StatelessWidget {
                               .copyWith(
                                   fontWeight: FontWeight.w700,
                                   fontSize: FontSize.blockSizeHorizontal! * 4)),
-                      Gap(spacing / 2),
+                      const Gap(spacing / 2),
                       Text("sayonara@gmail.com",
                           style: Theme.of(context)
                               .textTheme
@@ -78,13 +78,13 @@ class AccountPage extends StatelessWidget {
                                   fontSize: FontSize.blockSizeHorizontal! * 3))
                     ],
                   ),
-                  Gap(spacing * 3),
+                  const Gap(spacing * 3),
                   Container(
                     // width: 200,
                     height: 1,
                     decoration: const BoxDecoration(color: lightGrey),
                   ),
-                  Gap(spacing * 3),
+                  const Gap(spacing * 3),
                   ElevatedButton(
                     onPressed: () => Get.to(() => const EditAccount(),
                         transition: Transition.rightToLeft,
@@ -108,7 +108,7 @@ class AccountPage extends StatelessWidget {
                                 color: blue,
                                 width: spacing * 3,
                               ),
-                              Gap(spacing * 2),
+                              const Gap(spacing * 2),
                               Text("Edit Account",
                                   style: Theme.of(context)
                                       .textTheme
@@ -152,7 +152,7 @@ class AccountPage extends StatelessWidget {
                                 color: blue,
                                 width: spacing * 3,
                               ),
-                              Gap(spacing * 2),
+                              const Gap(spacing * 2),
                               Text("FAQ and Help",
                                   style: Theme.of(context)
                                       .textTheme
@@ -196,7 +196,7 @@ class AccountPage extends StatelessWidget {
                                 color: blue,
                                 width: spacing * 3,
                               ),
-                              Gap(spacing * 2),
+                              const Gap(spacing * 2),
                               Text("Contact Admin",
                                   style: Theme.of(context)
                                       .textTheme
@@ -240,7 +240,7 @@ class AccountPage extends StatelessWidget {
                                 color: blue,
                                 width: spacing * 3,
                               ),
-                              Gap(spacing * 2),
+                              const Gap(spacing * 2),
                               Text("Sign Out",
                                   style: Theme.of(context)
                                       .textTheme

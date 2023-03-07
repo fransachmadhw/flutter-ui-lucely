@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lucely_app/common/color_palettes.dart';
+import 'package:lucely_app/common/font_size.dart';
 import 'package:lucely_app/common/sizing.dart';
 
 enum ButtonType { primary, secondary, tertiary }
@@ -19,6 +20,7 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    FontSize().init(context);
     return ElevatedButton(
       onPressed: () =>
           !isLoading ? onPressed() : {}, // prevent click when state is loading
@@ -40,7 +42,7 @@ class PrimaryButton extends StatelessWidget {
         ),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(radius),
+            borderRadius: BorderRadius.circular(radius + radius / 2),
             side: BorderSide(
               color: type == ButtonType.secondary ? blue : white,
               width: 1,
@@ -57,9 +59,9 @@ class PrimaryButton extends StatelessWidget {
           : Text(
               title,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    color: type == ButtonType.primary ? white : blue,
-                    fontWeight: FontWeight.w500,
-                  ),
+                  color: type == ButtonType.primary ? white : blue,
+                  fontWeight: FontWeight.w500,
+                  fontSize: FontSize.blockSizeHorizontal! * 4),
             ),
     );
   }

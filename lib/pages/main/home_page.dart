@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:iconify_flutter/iconify_flutter.dart';
 import 'package:iconify_flutter/icons/bi.dart';
 import 'package:lucely_app/common/font_size.dart';
+import 'package:lucely_app/data/bookluce_model.dart';
 import 'package:lucely_app/data/events_model.dart';
 import 'package:lucely_app/data/luceguide_model.dart';
+import 'package:lucely_app/pages/bookluce/bookluce_detail.dart';
+import 'package:lucely_app/pages/bookluce/choose_bookluce.dart';
 import 'package:lucely_app/pages/counseling/choose_mentor.dart';
 import 'package:lucely_app/pages/counseling/choose_psychologist.dart';
 import 'package:lucely_app/pages/events/choose_events.dart';
@@ -82,7 +85,7 @@ class HomePage extends StatelessWidget {
                                     fontWeight: FontWeight.w700,
                                     fontSize:
                                         FontSize.blockSizeHorizontal! * 6.5)),
-                        Gap(spacing * 1),
+                        const Gap(spacing * 1),
                         Text(
                             "Tell me what's in your mind and your heart,\nfind the way out of your problem.",
                             maxLines: 3,
@@ -109,7 +112,7 @@ class HomePage extends StatelessWidget {
                       ),
                       child: Column(
                         children: [
-                          Gap(spacing * 10),
+                          const Gap(spacing * 10),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
@@ -136,20 +139,23 @@ class HomePage extends StatelessWidget {
                                 label: "LuceGuide",
                               ),
                               FeatureButton(
-                                onPressed: () {},
+                                onPressed: () => Get.to(() => ChooseBookluce(),
+                                    transition: Transition.rightToLeft,
+                                    duration:
+                                        const Duration(milliseconds: 500)),
                                 image: "assets/images/Bookluce.png",
                                 label: "Bookluce",
                               )
                             ],
                           ),
-                          Gap(spacing * 3),
+                          const Gap(spacing * 3),
                           SizedBox(
                             height: 145,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
                               children: [
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                                 Container(
                                   width: 315,
                                   decoration: BoxDecoration(
@@ -189,7 +195,7 @@ class HomePage extends StatelessWidget {
                                                               FontWeight.normal,
                                                           fontSize: 10)),
                                             ),
-                                            Gap(spacing),
+                                            const Gap(spacing),
                                             ElevatedButton(
                                               onPressed: () => Get.to(
                                                   () => ChoosePsychologist(),
@@ -254,7 +260,7 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 Container(
                                   width: 315,
                                   decoration: BoxDecoration(
@@ -296,7 +302,7 @@ class HomePage extends StatelessWidget {
                                                               FontWeight.normal,
                                                           fontSize: 10)),
                                             ),
-                                            Gap(spacing),
+                                            const Gap(spacing),
                                             ElevatedButton(
                                               onPressed: () => Get.to(
                                                   () => ChooseMentor(),
@@ -361,11 +367,11 @@ class HomePage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                               ],
                             ),
                           ),
-                          Gap(spacing * 1),
+                          const Gap(spacing * 1),
                           Padding(
                             padding: EdgeInsets.all(spacing * 3),
                             child: Row(
@@ -401,7 +407,10 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ),
                                 InkWell(
-                                  onTap: () {},
+                                  onTap: () => Get.to(() => ChooseBookluce(),
+                                      transition: Transition.rightToLeft,
+                                      duration:
+                                          const Duration(milliseconds: 500)),
                                   child: Text("See more",
                                       style: Theme.of(context)
                                           .textTheme
@@ -415,42 +424,78 @@ class HomePage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Gap(spacing * 0),
+                          const Gap(spacing * 0),
                           SizedBox(
                             height: FontSize.blockSizeVertical! * 30,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
                               children: [
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                                 Bookluce(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => BookluceDetail(
+                                            bookluceModel: BookluceModel(
+                                                "Good Vibes, Good Life",
+                                                "assets/images/Bookluce1.png",
+                                                "Vex King")),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: "assets/images/Bookluce1.png",
                                     title: "Good Vibes,\nGood Life",
                                     author: "Vex King"),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 Bookluce(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => BookluceDetail(
+                                            bookluceModel: BookluceModel(
+                                                "The Art of Thinking Clearly",
+                                                "assets/images/Bookluce2.png",
+                                                "Rolf Dobelli")),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: "assets/images/Bookluce2.png",
                                     title: "The Art of\nThinking Clearly",
                                     author: "Rolf Dobelli"),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 Bookluce(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => BookluceDetail(
+                                            bookluceModel: BookluceModel(
+                                                "Dear Tomorrow",
+                                                "assets/images/Bookluce3.png",
+                                                "Maudy Ayunda")),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: "assets/images/Bookluce3.png",
                                     title: "Dear Tomorrow",
                                     author: "Maudy Ayunda"),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 Bookluce(
-                                    onPressed: () {},
+                                    onPressed: () => Get.to(
+                                        () => BookluceDetail(
+                                            bookluceModel: BookluceModel(
+                                                "Eat That Frog",
+                                                "assets/images/Bookluce4.png",
+                                                "Brian Tracy")),
+                                        transition:
+                                            Transition.rightToLeftWithFade,
+                                        duration:
+                                            const Duration(milliseconds: 500)),
                                     image: "assets/images/Bookluce4.png",
                                     title: "Eat That Frog",
                                     author: "Brian Tracy"),
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                               ],
                             ),
                           ),
-                          Gap(spacing * 1),
+                          const Gap(spacing * 1),
                           Padding(
                             padding: EdgeInsets.all(spacing * 3),
                             child: Row(
@@ -504,7 +549,7 @@ class HomePage extends StatelessWidget {
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
                               children: [
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                                 EventButton(
                                     onPressed: () => Get.to(
                                         () => EventPage(
@@ -520,7 +565,7 @@ class HomePage extends StatelessWidget {
                                         "Take Care of Well-Being during Pandemic",
                                     date: "Wednesday, 27 February 2023",
                                     time: "2:00 PM - 3:30 PM"),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 EventButton(
                                     onPressed: () => Get.to(
                                         () => EventPage(
@@ -536,7 +581,7 @@ class HomePage extends StatelessWidget {
                                         "The Key to Being Confident without Being Overconfident",
                                     date: "Wednesday, 27 February 2023",
                                     time: "2:00 PM - 3:30 PM"),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 EventButton(
                                     onPressed: () => Get.to(
                                         () => EventPage(
@@ -552,11 +597,11 @@ class HomePage extends StatelessWidget {
                                         "Deal With Your Innerchild in Deep Talking",
                                     date: "Wednesday, 27 February 2023",
                                     time: "2:00 PM - 3:30 PM"),
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                               ],
                             ),
                           ),
-                          Gap(spacing * 2),
+                          const Gap(spacing * 2),
                           Padding(
                             padding: EdgeInsets.all(spacing * 3),
                             child: Row(
@@ -616,7 +661,7 @@ class HomePage extends StatelessWidget {
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
                               children: [
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                                 LuceGuideButton(
                                   onPressed: () => Get.to(
                                       () => LuceGuidePage(
@@ -632,7 +677,7 @@ class HomePage extends StatelessWidget {
                                   total: "5 sessions",
                                   background: lemonChiffon,
                                 ),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 LuceGuideButton(
                                   onPressed: () => Get.to(
                                       () => LuceGuidePage(
@@ -648,7 +693,7 @@ class HomePage extends StatelessWidget {
                                   total: "5 sessions",
                                   background: pigPink,
                                 ),
-                                Gap(spacing * 2),
+                                const Gap(spacing * 2),
                                 LuceGuideButton(
                                   onPressed: () => Get.to(
                                       () => LuceGuidePage(
@@ -664,11 +709,11 @@ class HomePage extends StatelessWidget {
                                   total: "5 sessions",
                                   background: lightCyan,
                                 ),
-                                Gap(spacing * 3),
+                                const Gap(spacing * 3),
                               ],
                             ),
                           ),
-                          Gap(spacing * 3),
+                          const Gap(spacing * 3),
                         ],
                       )),
                   Padding(
