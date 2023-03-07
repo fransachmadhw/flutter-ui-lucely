@@ -7,6 +7,6 @@ Lucely is an ultimate counselling app which lets the user choose their desired p
 
 - **Beautiful** User Interface
 - **Numerous** services
-- **Like a butter** animations
+- **Smooth like a butter** animations
 - **Superb** User Experience
 - **Outstanding** best selling books
